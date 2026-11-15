@@ -1,0 +1,1719 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jayed Jaman Seen — WordPress Web Development &amp; AI Tools Specialist</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          },
+          colors: {
+            obsidian: {
+              950: '#090d10',
+              900: '#0f161b',
+              800: '#162027',
+              700: '#1f2d37'
+            },
+            champagne: {
+              300: '#edd9b4',
+              400: '#e0c693',
+              500: '#c8a668',
+              600: '#a38042'
+            },
+            icecyan: {
+              300: '#b8ebf3',
+              400: '#96dde9',
+              500: '#38bdf8',
+              600: '#0284c7'
+            }
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    :root {
+      --bg-deep: #090d10;
+      --card-bg: rgba(22, 32, 39, 0.78);
+      --card-border: rgba(224, 198, 147, 0.22);
+      --gold: #e0c693;
+      --cyan: #96dde9;
+    }
+    body {
+      background-color: var(--bg-deep);
+      background-image:
+        radial-gradient(circle at 12% 15%, rgba(224, 198, 147, 0.09) 0%, transparent 38%),
+        radial-gradient(circle at 88% 22%, rgba(150, 221, 233, 0.08) 0%, transparent 42%),
+        radial-gradient(circle at 50% 85%, rgba(20, 184, 166, 0.06) 0%, transparent 45%),
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 100% 100%, 44px 44px, 44px 44px;
+      color: #f1f5f9;
+      overflow-x: hidden;
+    }
+    .bento-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--card-border);
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .bento-card:hover {
+      border-color: rgba(224, 198, 147, 0.45);
+      box-shadow: 0 18px 40px -15px rgba(0, 0, 0, 0.65), 0 0 25px -5px rgba(224, 198, 147, 0.12);
+    }
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #ffffff 0%, #e0c693 52%, #96dde9 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #0f161b;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #334155;
+      border-radius: 9999px;
+    }
+    mark.cv-hl {
+      background: rgba(224, 198, 147, 0.35);
+      color: #fff;
+      padding: 0 3px;
+      border-radius: 3px;
+    }
+    @media print {
+      .no-print { display: none !important; }
+      body { background: #ffffff !important; color: #111827 !important; }
+      #print-cv-sheet {
+        display: block !important;
+        background: #ffffff !important;
+        color: #111827 !important;
+        box-shadow: none !important;
+        border: none !important;
+      }
+    }
+  </style>
+</head>
+<body class="min-h-screen font-sans antialiased selection:bg-champagne-400 selection:text-obsidian-950">
+
+  <!-- ==================== TOP SPATIAL COMMAND BAR ==================== -->
+  <header class="sticky top-0 z-40 border-b border-white/10 bg-obsidian-950/85 backdrop-blur-xl no-print">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-3">
+      <!-- Brand Identity -->
+      <div class="flex items-center gap-3">
+        <div class="relative w-10 h-10 rounded-xl overflow-hidden border border-champagne-400/60 shadow-inner bg-obsidian-800 flex-shrink-0">
+          <img src="data:image/jpeg;base64,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" alt="Jayed Jaman Seen" class="w-full h-full object-cover">
+          <span class="absolute bottom-0.5 right-0.5 w-2.5 h-2.5 rounded-full bg-emerald-400 ring-2 ring-obsidian-950"></span>
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="font-display font-bold text-sm sm:text-base tracking-wide text-white">JAYED JAMAN SEEN</span>
+            <span class="hidden sm:inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-mono font-medium bg-champagne-400/15 text-champagne-300 border border-champagne-400/30">BCC AI Certified</span>
+          </div>
+          <p class="text-xs text-slate-400 truncate max-w-[210px] sm:max-w-none">WordPress Web Development &amp; AI Tools Specialist</p>
+        </div>
+      </div>
+
+      <!-- Mode & Section Switcher -->
+      <nav class="hidden md:flex items-center gap-1 bg-obsidian-900/90 p-1 rounded-xl border border-white/10">
+        <button type="button" data-nav="overview" onclick="switchWorkspaceMode('portfolio', 'hero-sec')" class="nav-pill px-3 py-1.5 rounded-lg text-xs font-semibold transition-all bg-champagne-400 text-obsidian-950">
+          Spatial Overview
+        </button>
+        <button type="button" data-nav="skills" onclick="switchWorkspaceMode('portfolio', 'skills-sec')" class="nav-pill px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-300 hover:text-white transition-all">
+          5-Pillar Skills
+        </button>
+        <button type="button" data-nav="projects" onclick="switchWorkspaceMode('portfolio', 'projects-sec')" class="nav-pill px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-300 hover:text-white transition-all">
+          Projects &amp; Lab
+        </button>
+        <button type="button" data-nav="estimator" onclick="switchWorkspaceMode('portfolio', 'estimator-sec')" class="nav-pill px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-300 hover:text-white transition-all">
+          Scope Estimator
+        </button>
+        <button type="button" data-nav="cv-studio" onclick="switchWorkspaceMode('cv', 'cv-studio-sec')" class="nav-pill px-3 py-1.5 rounded-lg text-xs font-semibold text-icecyan-300 hover:text-white transition-all flex items-center gap-1.5">
+          <span>Dual-CV Studio</span>
+          <span class="px-1.5 py-0.2 bg-icecyan-400/20 text-icecyan-300 rounded text-[10px] font-mono">ATS+Visual</span>
+        </button>
+      </nav>
+
+      <!-- Quick Command & Hire Actions -->
+      <div class="flex items-center gap-2">
+        <button type="button" id="open-cmd-btn" onclick="openCommandPalette()" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-obsidian-800 hover:bg-obsidian-700 border border-white/15 text-xs text-slate-300 transition-all" title="Open Quick Command Palette">
+          <svg class="w-3.5 h-3.5 text-champagne-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          <span class="hidden sm:inline">Command</span>
+          <kbd class="hidden sm:inline-block px-1.5 py-0.5 text-[10px] font-mono bg-obsidian-950 text-champagne-300 rounded border border-white/10">Ctrl+K</kbd>
+        </button>
+        <button type="button" onclick="switchWorkspaceMode('cv', 'cv-studio-sec')" class="md:hidden inline-flex items-center px-2.5 py-1.5 rounded-xl bg-icecyan-400/15 border border-icecyan-400/30 text-icecyan-300 text-xs font-semibold">
+          CV Studio
+        </button>
+        <button type="button" onclick="openContactModal()" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-champagne-400 to-champagne-300 hover:from-champagne-300 hover:to-champagne-400 text-obsidian-950 font-bold text-xs shadow-lg shadow-champagne-400/10 transition-all">
+          <span>Hire / Contact</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== MAIN WORKSPACE CONTAINER ==================== -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10 space-y-12">
+
+    <!-- ==================== VIEW 1: SPATIAL PORTFOLIO VIEW ==================== -->
+    <div id="portfolio-view" class="space-y-12">
+
+      <!-- 1. BENTO HERO ARCHITECTURE -->
+      <section id="hero-sec" class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-stretch">
+        <!-- Left 8-Col Command Hero Card -->
+        <div class="lg:col-span-8 bento-card rounded-3xl p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden">
+          <div class="space-y-5 relative z-10">
+            <!-- Status & Location Strip -->
+            <div class="flex flex-wrap items-center gap-2.5">
+              <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-300 border border-emerald-500/25">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                Available for WordPress &amp; AI Projects
+              </span>
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono text-slate-300 bg-white/5 border border-white/10">
+                📍 Barishal, Bangladesh (Remote Worldwide)
+              </span>
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono text-champagne-300 bg-champagne-400/10 border border-champagne-400/25">
+                🎓 CSE Undergrad @ Trust University
+              </span>
+            </div>
+
+            <!-- Main Headline Matching Kit Style -->
+            <div class="space-y-2">
+              <p class="text-xs sm:text-sm font-mono uppercase tracking-[0.25em] text-slate-400">Jayed Jaman Seen • Digital Solutions Architect</p>
+              <h1 class="font-display text-2xl sm:text-4xl lg:text-[42px] font-extrabold tracking-tight leading-[1.12]">
+                <span class="text-white">WORDPRESS WEB DEVELOPMENT</span>
+                <span class="text-white"> &amp; </span>
+                <span class="text-champagne-400">AI TOOLS</span>
+                <span class="text-icecyan-400"> SPECIALIST</span>
+              </h1>
+            </div>
+
+            <!-- Interactive Colored-Dot Skill Pills from Kit (Clicking filters the Skill Matrix!) -->
+            <div class="pt-1">
+              <p class="text-[11px] font-mono uppercase tracking-wider text-slate-400 mb-2">Click any core specialization pill to inspect capabilities:</p>
+              <div class="flex flex-wrap gap-2">
+                <button type="button" onclick="JumpAndFilterSkill('wordpress')" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium bg-obsidian-950/80 hover:bg-obsidian-800 text-slate-100 border border-champagne-400/30 transition-all">
+                  <span class="w-2 h-2 rounded-full bg-orange-400"></span>
+                  <span>WordPress &amp; WooCommerce</span>
+                </button>
+                <button type="button" onclick="JumpAndFilterSkill('wordpress')" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium bg-obsidian-950/80 hover:bg-obsidian-800 text-slate-100 border border-champagne-400/30 transition-all">
+                  <span class="w-2 h-2 rounded-full bg-pink-400"></span>
+                  <span>Elementor &amp; Custom Themes</span>
+                </button>
+                <button type="button" onclick="JumpAndFilterSkill('ai')" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium bg-obsidian-950/80 hover:bg-obsidian-800 text-slate-100 border border-champagne-400/30 transition-all">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                  <span>AI Web &amp; Automation</span>
+                </button>
+                <button type="button" onclick="JumpAndFilterSkill('seo')" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium bg-obsidian-950/80 hover:bg-obsidian-800 text-slate-100 border border-champagne-400/30 transition-all">
+                  <span class="w-2 h-2 rounded-full bg-sky-400"></span>
+                  <span>Technical SEO &amp; SEM</span>
+                </button>
+                <button type="button" onclick="JumpAndFilterSkill('seo')" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium bg-obsidian-950/80 hover:bg-obsidian-800 text-slate-100 border border-champagne-400/30 transition-all">
+                  <span class="w-2 h-2 rounded-full bg-violet-400"></span>
+                  <span>Keyword Research</span>
+                </button>
+                <button type="button" onclick="JumpAndFilterSkill('seo')" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium bg-obsidian-950/80 hover:bg-obsidian-800 text-slate-100 border border-champagne-400/30 transition-all">
+                  <span class="w-2 h-2 rounded-full bg-lime-400"></span>
+                  <span>B2B/B2C Lead Generation</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Bio Summary -->
+            <p class="text-sm sm:text-base text-slate-300 leading-relaxed max-w-3xl">
+              Computer Science &amp; Engineering undergraduate and WordPress web developer combining hands-on site-building skills (<strong class="text-white">Elementor, Gutenberg, WooCommerce</strong>) with <strong class="text-champagne-300">AI-assisted workflows</strong>, <strong class="text-icecyan-300">SEO fundamentals</strong>, and <strong class="text-white">lead-generation research</strong> that help client sites get found and convert. BCC-certified in <em>Artificial Intelligence for Professionals</em> and completing the 600-hour government-sponsored Freelancing &amp; ICT program (DYD, 8th Batch — elected First-Month Class Representative).
+            </p>
+          </div>
+
+          <!-- Action Buttons & Live Contact Bar -->
+          <div class="pt-6 mt-6 border-t border-white/10 flex flex-wrap items-center justify-between gap-4 relative z-10">
+            <div class="flex flex-wrap items-center gap-3">
+              <button type="button" onclick="switchWorkspaceMode('cv', 'cv-studio-sec')" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-champagne-400 hover:bg-champagne-300 text-obsidian-950 font-bold text-xs sm:text-sm transition-all shadow-lg shadow-champagne-400/15">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                <span>Open Interactive Dual-CV Studio</span>
+              </button>
+              <button type="button" onclick="switchWorkspaceMode('portfolio', 'estimator-sec')" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-obsidian-950/90 hover:bg-obsidian-800 text-champagne-300 border border-champagne-400/40 font-semibold text-xs sm:text-sm transition-all">
+                <span>Configure Project &amp; Estimate</span>
+              </button>
+              <a href="https://student-id-portal-1.onrender.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-icecyan-400/10 hover:bg-icecyan-400/20 text-icecyan-300 border border-icecyan-400/30 font-semibold text-xs sm:text-sm transition-all">
+                <span>Live Web App</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+              </a>
+            </div>
+
+            <div class="flex items-center gap-2">
+              <button type="button" onclick="copyTextToClipboard('thunderseen@gmail.com', 'Email address copied: thunderseen@gmail.com')" class="px-3 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-mono text-slate-300 transition-all" title="Click to Copy Email">
+                ✉ thunderseen@gmail.com
+              </button>
+              <button type="button" onclick="copyTextToClipboard('+880 1307-758119', 'Phone/WhatsApp copied: +880 1307-758119')" class="px-3 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-mono text-slate-300 transition-all" title="Click to Copy Phone">
+                📞 +880 1307-758119
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right 4-Col Executive Portrait & Verified Credentials Card -->
+        <div class="lg:col-span-4 bento-card rounded-3xl p-6 flex flex-col justify-between relative overflow-hidden">
+          <div class="flex flex-col items-center text-center">
+            <div class="relative w-36 h-44 sm:w-40 sm:h-48 rounded-2xl overflow-hidden border-2 border-champagne-400 shadow-2xl mb-4 bg-obsidian-900">
+              <img src="data:image/jpeg;base64,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" alt="Jayed Jaman Seen Studio Portrait" class="w-full h-full object-cover">
+              <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-obsidian-950/90 via-obsidian-950/40 to-transparent p-2">
+                <span class="text-[10px] font-mono uppercase tracking-widest text-champagne-300">Verified Identity</span>
+              </div>
+            </div>
+            <h2 class="font-display font-bold text-lg text-white">Jayed Jaman Seen</h2>
+            <p class="text-xs text-champagne-300 font-medium mb-3">WordPress Web Development &amp; AI Tools Specialist</p>
+          </div>
+
+          <!-- 4 Quick Verified Proof Metrics -->
+          <div class="grid grid-cols-2 gap-2.5 my-2">
+            <div class="p-3 rounded-2xl bg-obsidian-950/75 border border-white/10">
+              <div class="text-xs font-mono text-champagne-400 font-bold">BCC Certified</div>
+              <div class="text-[11px] text-slate-300 mt-0.5">AI for Professionals (Barishal)</div>
+            </div>
+            <div class="p-3 rounded-2xl bg-obsidian-950/75 border border-white/10">
+              <div class="text-xs font-mono text-icecyan-400 font-bold">600-Hr DYD</div>
+              <div class="text-[11px] text-slate-300 mt-0.5">8th Batch • 1st-Month CR</div>
+            </div>
+            <div class="p-3 rounded-2xl bg-obsidian-950/75 border border-white/10">
+              <div class="text-xs font-mono text-emerald-400 font-bold">IELTS 6.0 &amp; DET</div>
+              <div class="text-[11px] text-slate-300 mt-0.5">CEFR B2 • Duolingo 90/160</div>
+            </div>
+            <div class="p-3 rounded-2xl bg-obsidian-950/75 border border-white/10">
+              <div class="text-xs font-mono text-amber-300 font-bold">5+ Years Ops</div>
+              <div class="text-[11px] text-slate-300 mt-0.5">Brand, Content &amp; Web Growth</div>
+            </div>
+          </div>
+
+          <!-- Direct Social & Profile Links -->
+          <div class="pt-3 border-t border-white/10 flex items-center justify-between gap-2 text-xs">
+            <a href="https://www.linkedin.com/in/jayed-jaman-seen-b540b8334" target="_blank" rel="noopener noreferrer" class="flex-1 py-2 rounded-xl bg-[#0a66c2]/20 hover:bg-[#0a66c2]/35 text-sky-300 border border-sky-500/30 font-semibold text-center transition-all">
+              LinkedIn
+            </a>
+            <a href="https://github.com/JJSEEN" target="_blank" rel="noopener noreferrer" class="flex-1 py-2 rounded-xl bg-white/5 hover:bg-white/15 text-slate-200 border border-white/15 font-semibold text-center transition-all">
+              GitHub (JJSEEN)
+            </a>
+            <a href="https://student-id-portal-1.onrender.com" target="_blank" rel="noopener noreferrer" class="flex-1 py-2 rounded-xl bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-300 border border-emerald-500/30 font-semibold text-center transition-all">
+              Render App
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. INTERACTIVE 5-PILLAR SKILL MATRIX & RADAR VISUALIZER -->
+      <section id="skills-sec" class="space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+          <div>
+            <span class="text-xs font-mono uppercase tracking-widest text-champagne-400">Interactive Technical Architecture</span>
+            <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-white mt-1">5-Pillar Core Competency Matrix</h2>
+          </div>
+          <!-- Category Filter Buttons -->
+          <div class="flex flex-wrap gap-1.5" id="skill-filter-bar">
+            <button type="button" data-skill-cat="all" onclick="filterSkills('all')" class="skill-tab-btn px-3 py-1.5 rounded-xl text-xs font-bold bg-champagne-400 text-obsidian-950 transition-all">
+              All 5 Pillars (32)
+            </button>
+            <button type="button" data-skill-cat="wordpress" onclick="filterSkills('wordpress')" class="skill-tab-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-obsidian-800 text-slate-300 hover:text-white border border-white/10 transition-all">
+              WordPress &amp; Woo
+            </button>
+            <button type="button" data-skill-cat="ai" onclick="filterSkills('ai')" class="skill-tab-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-obsidian-800 text-slate-300 hover:text-white border border-white/10 transition-all">
+              AI &amp; Automation
+            </button>
+            <button type="button" data-skill-cat="seo" onclick="filterSkills('seo')" class="skill-tab-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-obsidian-800 text-slate-300 hover:text-white border border-white/10 transition-all">
+              SEO, Keywords &amp; Leads
+            </button>
+            <button type="button" data-skill-cat="marketing" onclick="filterSkills('marketing')" class="skill-tab-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-obsidian-800 text-slate-300 hover:text-white border border-white/10 transition-all">
+              Digital Marketing &amp; Media
+            </button>
+            <button type="button" data-skill-cat="tools" onclick="filterSkills('tools')" class="skill-tab-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-obsidian-800 text-slate-300 hover:text-white border border-white/10 transition-all">
+              Productivity &amp; IT
+            </button>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+          <!-- Left 7-Col Dynamic Skill Cards -->
+          <div id="skills-grid-container" class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <!-- Populated dynamically by JS -->
+          </div>
+
+          <!-- Right 5-Col Interactive Radar Chart & Pillar Summary -->
+          <div class="lg:col-span-5 bento-card rounded-3xl p-6 space-y-4">
+            <div class="flex items-center justify-between">
+              <div>
+                <h3 id="chart-panel-title" class="font-display font-bold text-base text-white">Multidisciplinary Capability Radar</h3>
+                <p id="chart-panel-subtitle" class="text-xs text-slate-400">Balanced execution across WordPress, AI workflows, SEO &amp; Creative Ops</p>
+              </div>
+              <span class="px-2.5 py-1 rounded-lg text-[11px] font-mono bg-champagne-400/15 text-champagne-300 border border-champagne-400/30">Live View</span>
+            </div>
+            <div class="relative h-72 w-full">
+              <canvas id="competencyChart"></canvas>
+            </div>
+            <div id="active-pillar-Banner" class="p-3.5 rounded-2xl bg-obsidian-950/80 border border-white/10 text-xs text-slate-300 leading-relaxed">
+              Select any pillar above to inspect individual tools, workflows, and real-world deliverables.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. FEATURED PROJECTS, CASE STUDIES & DELIVERABLES VAULT -->
+      <section id="projects-sec" class="space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+          <div>
+            <span class="text-xs font-mono uppercase tracking-widest text-icecyan-400">Verified Work &amp; Case Studies</span>
+            <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-white mt-1">Featured Projects &amp; Digital Deliverables</h2>
+          </div>
+          <div class="flex flex-wrap gap-1.5" id="project-filter-bar">
+            <button type="button" data-proj-cat="all" onclick="filterProjects('all')" class="proj-tab-btn px-3 py-1.5 rounded-xl text-xs font-bold bg-icecyan-400 text-obsidian-950 transition-all">
+              All Work (6)
+            </button>
+            <button type="button" data-proj-cat="webapp" onclick="filterProjects('webapp')" class="proj-tab-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-obsidian-800 text-slate-300 hover:text-white border border-white/10 transition-all">
+              AI &amp; Web Apps
+            </button>
+            <button type="button" data-proj-cat="wordpress" onclick="filterProjects('wordpress')" class="proj-tab-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-obsidian-800 text-slate-300 hover:text-white border border-white/10 transition-all">
+              WordPress &amp; Woo
+            </button>
+            <button type="button" data-proj-cat="seo" onclick="filterProjects('seo')" class="proj-tab-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-obsidian-800 text-slate-300 hover:text-white border border-white/10 transition-all">
+              SEO &amp; Lead Gen
+            </button>
+            <button type="button" data-proj-cat="brand" onclick="filterProjects('brand')" class="proj-tab-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-obsidian-800 text-slate-300 hover:text-white border border-white/10 transition-all">
+              Brand &amp; Creative
+            </button>
+          </div>
+        </div>
+
+        <div id="projects-grid-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <!-- Populated dynamically by JS -->
+        </div>
+      </section>
+
+      <!-- 4. INTERACTIVE PROJECT SCOPE & TIMELINE ESTIMATOR -->
+      <section id="estimator-sec" class="bento-card rounded-3xl p-6 sm:p-8">
+        <div class="max-w-3xl mb-6">
+          <span class="text-xs font-mono uppercase tracking-widest text-champagne-400">Interactive Client Configurator</span>
+          <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-white mt-1">WordPress, AI &amp; SEO Project Scope Estimator</h2>
+          <p class="text-xs sm:text-sm text-slate-300 mt-1">
+            Configure your project requirements below to preview the recommended technical stack, deliverable roadmap, estimated turnaround window, and a ready-to-send project brief.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+          <!-- Left 7-Col Controls -->
+          <div class="lg:col-span-7 space-y-5">
+            <!-- Step 1: Core Service Selection -->
+            <div>
+              <label class="block text-xs font-mono uppercase tracking-wider text-champagne-300 mb-2">1. Select Core Service Architecture</label>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5" id="service-type-buttons">
+                <button type="button" data-service="wp-business" onclick="selectEstimatorService('wp-business')" class="est-srv-btn text-left p-3.5 rounded-2xl border border-champagne-400 bg-champagne-400/15 transition-all">
+                  <div class="font-bold text-xs sm:text-sm text-white">WordPress Business / Portfolio Site</div>
+                  <div class="text-[11px] text-slate-300 mt-0.5">Elementor/Gutenberg, Custom Theme &amp; Speed</div>
+                </button>
+                <button type="button" data-service="woocommerce" onclick="selectEstimatorService('woocommerce')" class="est-srv-btn text-left p-3.5 rounded-2xl border border-white/10 bg-obsidian-950/60 hover:border-white/30 transition-all">
+                  <div class="font-bold text-xs sm:text-sm text-white">WooCommerce E-Commerce Store</div>
+                  <div class="text-[11px] text-slate-300 mt-0.5">Product Catalog, Checkout &amp; Payment Setup</div>
+                </button>
+                <button type="button" data-service="ai-webapp" onclick="selectEstimatorService('ai-webapp')" class="est-srv-btn text-left p-3.5 rounded-2xl border border-white/10 bg-obsidian-950/60 hover:border-white/30 transition-all">
+                  <div class="font-bold text-xs sm:text-sm text-white">AI-Assisted Web App / Custom Portal</div>
+                  <div class="text-[11px] text-slate-300 mt-0.5">Automated Workflows, Portals &amp; Cloud Deploy</div>
+                </button>
+                <button type="button" data-service="seo-leadgen" onclick="selectEstimatorService('seo-leadgen')" class="est-srv-btn text-left p-3.5 rounded-2xl border border-white/10 bg-obsidian-950/60 hover:border-white/30 transition-all">
+                  <div class="font-bold text-xs sm:text-sm text-white">Keyword Hunting, SEO &amp; Lead Gen</div>
+                  <div class="text-[11px] text-slate-300 mt-0.5">SEMrush/Ahrefs Audit, On-Page SEO &amp; B2B Leads</div>
+                </button>
+              </div>
+            </div>
+
+            <!-- Step 2: Volume / Pages Slider -->
+            <div class="p-4 rounded-2xl bg-obsidian-950/70 border border-white/10">
+              <div class="flex items-center justify-between mb-2">
+                <label for="scope-slider" class="text-xs font-mono uppercase tracking-wider text-icecyan-300">2. Scale: Pages / Templates / Campaign Units</label>
+                <span id="scope-slider-label" class="text-sm font-mono font-bold text-white px-2.5 py-0.5 rounded bg-white/10">5 Units / Pages</span>
+              </div>
+              <input id="scope-slider" type="range" min="1" max="20" value="5" oninput="updateEstimator()" class="w-full accent-champagne-400 cursor-pointer">
+              <div class="flex justify-between text-[11px] font-mono text-slate-400 mt-1">
+                <span>1 (Single Landing / Audit)</span>
+                <span>10 (Mid-Scale Site)</span>
+                <span>20 (Full Enterprise Suite)</span>
+              </div>
+            </div>
+
+            <!-- Step 3: Add-on Modules -->
+            <div>
+              <label class="block text-xs font-mono uppercase tracking-wider text-champagne-300 mb-2">3. Optional Growth &amp; AI Add-On Modules</label>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                <label class="flex items-center gap-2.5 p-3 rounded-xl bg-obsidian-950/60 border border-white/10 cursor-pointer hover:border-champagne-400/40">
+                  <input type="checkbox" id="addon-seo" checked onchange="updateEstimator()" class="rounded accent-champagne-400 w-4 h-4">
+                  <span class="text-xs text-slate-200">Keyword Research &amp; On-Page SEO (Rank Math)</span>
+                </label>
+                <label class="flex items-center gap-2.5 p-3 rounded-xl bg-obsidian-950/60 border border-white/10 cursor-pointer hover:border-champagne-400/40">
+                  <input type="checkbox" id="addon-leads" onchange="updateEstimator()" class="rounded accent-champagne-400 w-4 h-4">
+                  <span class="text-xs text-slate-200">Targeted B2B/B2C Prospect &amp; Lead List</span>
+                </label>
+                <label class="flex items-center gap-2.5 p-3 rounded-xl bg-obsidian-950/60 border border-white/10 cursor-pointer hover:border-champagne-400/40">
+                  <input type="checkbox" id="addon-ai" checked onchange="updateEstimator()" class="rounded accent-champagne-400 w-4 h-4">
+                  <span class="text-xs text-slate-200">AI Content, Graphics &amp; Brand Assets</span>
+                </label>
+                <label class="flex items-center gap-2.5 p-3 rounded-xl bg-obsidian-950/60 border border-white/10 cursor-pointer hover:border-champagne-400/40">
+                  <input type="checkbox" id="addon-multi" onchange="updateEstimator()" class="rounded accent-champagne-400 w-4 h-4">
+                  <span class="text-xs text-slate-200">Multilingual / Membership (CPT &amp; ACF)</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right 5-Col Live Output Summary & Instant Brief Sender -->
+          <div class="lg:col-span-5 p-6 rounded-3xl bg-obsidian-950/90 border border-champagne-400/35 space-y-4">
+            <div class="flex items-center justify-between border-b border-white/10 pb-3">
+              <div>
+                <span class="text-[11px] font-mono uppercase tracking-wider text-champagne-400">Estimated Delivery Roadmap</span>
+                <h3 id="est-summary-title" class="font-display font-bold text-lg text-white">WordPress Business / Portfolio Site</h3>
+              </div>
+              <div class="text-right">
+                <div id="est-days-badge" class="text-xl font-mono font-extrabold text-icecyan-400">5–7 Days</div>
+                <div class="text-[10px] font-mono text-slate-400">Turnaround Window</div>
+              </div>
+            </div>
+
+            <div>
+              <div class="text-xs font-mono uppercase tracking-wider text-slate-400 mb-2">Included Deliverables &amp; Stack:</div>
+              <ul id="est-deliverables-list" class="space-y-1.5 text-xs text-slate-200">
+                <!-- Populated by JS -->
+              </ul>
+            </div>
+
+            <div class="pt-3 border-t border-white/10 space-y-2">
+              <button type="button" onclick="sendEstimatorViaWhatsApp()" class="w-full py-2.5 px-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-obsidian-950 font-bold text-xs flex items-center justify-center gap-2 transition-all">
+                <span>Send Configured Brief via WhatsApp (+880 1307-758119)</span>
+              </button>
+              <div class="grid grid-cols-2 gap-2">
+                <button type="button" onclick="sendEstimatorViaEmail()" class="py-2 px-3 rounded-xl bg-white/10 hover:bg-white/15 text-white font-semibold text-xs transition-all">
+                  Email Brief
+                </button>
+                <button type="button" onclick="copyEstimatorBrief()" class="py-2 px-3 rounded-xl bg-obsidian-800 hover:bg-obsidian-700 text-champagne-300 border border-champagne-400/30 font-semibold text-xs transition-all">
+                  Copy Scope Text
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. VERIFIED EXPERIENCE, CERTIFICATIONS, EDUCATION & LEADERSHIP TIMELINE -->
+      <section id="timeline-sec" class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <!-- Left 6-Col Experience & Certifications -->
+        <div class="lg:col-span-6 bento-card rounded-3xl p-6 sm:p-7 space-y-6">
+          <div>
+            <span class="text-xs font-mono uppercase tracking-widest text-champagne-400">Career &amp; Government Fellowships</span>
+            <h2 class="font-display text-xl sm:text-2xl font-extrabold text-white mt-1">Experience &amp; Professional Training</h2>
+          </div>
+
+          <div class="space-y-5 border-l-2 border-champagne-400/35 pl-4">
+            <div class="relative">
+              <span class="absolute -left-[21px] top-1.5 w-2.5 h-2.5 rounded-full bg-champagne-400"></span>
+              <div class="flex flex-wrap items-center justify-between gap-1">
+                <h3 class="font-bold text-sm sm:text-base text-white">WordPress Web Developer &amp; AI Tools Specialist</h3>
+                <span class="text-xs font-mono text-champagne-300">2025 – Present</span>
+              </div>
+              <p class="text-xs text-icecyan-300 font-medium">Freelance / Independent Projects • Barishal &amp; Remote</p>
+              <ul class="mt-2 space-y-1 text-xs text-slate-300 list-disc list-inside">
+                <li>Design, build, and customize responsive WordPress &amp; WooCommerce sites using Elementor, Gutenberg, and custom child themes.</li>
+                <li>Apply keyword research, competitor analysis, and SEO fundamentals alongside B2B/B2C lead generation.</li>
+                <li>Independently built and deployed the live Student ID Card web application on Render (<a href="https://student-id-portal-1.onrender.com" target="_blank" rel="noopener noreferrer" class="text-icecyan-400 underline">student-id-portal-1.onrender.com</a>).</li>
+              </ul>
+            </div>
+
+            <div class="relative">
+              <span class="absolute -left-[21px] top-1.5 w-2.5 h-2.5 rounded-full bg-icecyan-400"></span>
+              <div class="flex flex-wrap items-center justify-between gap-1">
+                <h3 class="font-bold text-sm sm:text-base text-white">Social Media &amp; Digital Marketing Specialist</h3>
+                <span class="text-xs font-mono text-icecyan-300">May 2021 – Present</span>
+              </div>
+              <p class="text-xs text-slate-400 font-medium">M/S Munni Trading &amp; Co. / The Chanachur Factory • Barishal</p>
+              <ul class="mt-2 space-y-1 text-xs text-slate-300 list-disc list-inside">
+                <li>Manage end-to-end social media presence, content calendars, commercial photography/videography, promotional graphics, and digital lead generation.</li>
+              </ul>
+            </div>
+
+            <div class="relative">
+              <span class="absolute -left-[21px] top-1.5 w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+              <div class="flex flex-wrap items-center justify-between gap-1">
+                <h3 class="font-bold text-sm sm:text-base text-white">Artificial Intelligence for Professionals</h3>
+                <span class="text-xs font-mono text-emerald-300">2026 | Completed</span>
+              </div>
+              <p class="text-xs text-slate-400 font-medium">Bangladesh Computer Council (BCC), ICT Division – Regional Office, Barishal</p>
+              <p class="mt-1 text-xs text-slate-300">Professional government training in AI tools, prompt engineering, generative AI workflows, and AI-assisted business productivity.</p>
+            </div>
+
+            <div class="relative">
+              <span class="absolute -left-[21px] top-1.5 w-2.5 h-2.5 rounded-full bg-champagne-400"></span>
+              <div class="flex flex-wrap items-center justify-between gap-1">
+                <h3 class="font-bold text-sm sm:text-base text-white">Freelancing &amp; ICT Skills Development (600 Hours, 8th Batch)</h3>
+                <span class="text-xs font-mono text-champagne-300">Oct – Dec 2026</span>
+              </div>
+              <p class="text-xs text-slate-400 font-medium">Department of Youth Development (DYD), Barishal – e-Learning &amp; Earning Ltd.</p>
+              <p class="mt-1 text-xs text-slate-300">Elected <strong>First-Month Class Representative (CR)</strong>. Covering WordPress Development, Digital Marketing &amp; Keyword Research, AI-Assisted Lead Generation, AI Content/Graphic/Video Editing, Office Apps, Hardware &amp; Communicative English.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right 6-Col Education, Leadership & Communication -->
+        <div class="lg:col-span-6 bento-card rounded-3xl p-6 sm:p-7 space-y-6">
+          <div>
+            <span class="text-xs font-mono uppercase tracking-widest text-icecyan-400">Academic, Leadership &amp; Languages</span>
+            <h2 class="font-display text-xl sm:text-2xl font-extrabold text-white mt-1">Education, Leadership &amp; Communication</h2>
+          </div>
+
+          <!-- Education Cards -->
+          <div class="space-y-3">
+            <div class="p-3.5 rounded-2xl bg-obsidian-950/75 border border-white/10 flex items-center justify-between gap-3">
+              <div>
+                <h3 class="font-bold text-sm text-white">B.Sc. in Computer Science and Engineering</h3>
+                <p class="text-xs text-slate-300">Trust University, Barishal</p>
+              </div>
+              <span class="px-2.5 py-1 rounded-lg text-xs font-mono bg-icecyan-400/15 text-icecyan-300 border border-icecyan-400/30 flex-shrink-0">In Progress</span>
+            </div>
+
+            <div class="p-3.5 rounded-2xl bg-obsidian-950/75 border border-white/10 flex items-center justify-between gap-3">
+              <div>
+                <h3 class="font-bold text-sm text-white">Higher Secondary Certificate (HSC), Science</h3>
+                <p class="text-xs text-slate-300">Government Syed Hatem Ali College, Barishal</p>
+              </div>
+              <span class="px-2.5 py-1 rounded-lg text-xs font-mono bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 flex-shrink-0">2020 | GPA 5.00/5.00</span>
+            </div>
+
+            <div class="p-3.5 rounded-2xl bg-obsidian-950/75 border border-white/10 flex items-center justify-between gap-3">
+              <div>
+                <h3 class="font-bold text-sm text-white">Secondary School Certificate (SSC), Science</h3>
+                <p class="text-xs text-slate-300">Shahid Abdur Rab Serniyabad Govt. Secondary School, Barishal</p>
+              </div>
+              <span class="px-2.5 py-1 rounded-lg text-xs font-mono bg-champagne-400/15 text-champagne-300 border border-champagne-400/30 flex-shrink-0">2018 | GPA 4.61/5.00</span>
+            </div>
+          </div>
+
+          <!-- Leadership & Achievements -->
+          <div class="space-y-2.5 pt-2">
+            <h3 class="text-xs font-mono uppercase tracking-wider text-champagne-300">Verified Leadership &amp; Co-Curricular Honors</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
+              <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+                <div class="font-bold text-white">First-Month Class Representative</div>
+                <div class="text-slate-300 mt-0.5">DYD 600-Hr Freelancing &amp; ICT Training, 8th Batch (2026)</div>
+              </div>
+              <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+                <div class="font-bold text-white">Best Volunteer Award</div>
+                <div class="text-slate-300 mt-0.5">Lal Sabuj Society, Barishal Branch (2016–2018; Certified 2019)</div>
+              </div>
+              <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+                <div class="font-bold text-white">National Archery Competitor</div>
+                <div class="text-slate-300 mt-0.5">Bangladesh U-16 Championship &amp; NSC Zonal Talent Hunt (2016)</div>
+              </div>
+              <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+                <div class="font-bold text-white">Elected Student Cabinet Member</div>
+                <div class="text-slate-300 mt-0.5">School Student Parliament, SARS Govt. Secondary School</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Languages & Communication -->
+          <div class="p-4 rounded-2xl bg-gradient-to-r from-obsidian-950 via-obsidian-900 to-obsidian-950 border border-champagne-400/30 space-y-1.5">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="font-bold text-xs sm:text-sm text-white">English &amp; Interpersonal Communication</span>
+              <span class="text-xs font-mono text-champagne-300">IELTS Band 6.0 (Speaking 6.0; CEFR B2) • DET 90/160</span>
+            </div>
+            <p class="text-xs text-slate-300">
+              Strong professional communication across client consultation, interpersonal rapport, team coordination, and stakeholder interaction—able to collaborate effortlessly with people from all backgrounds.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ==================== VIEW 2: BUILT-IN LIVE DUAL-CV STUDIO ==================== -->
+    <section id="cv-studio-sec" class="space-y-6">
+      <div class="bento-card rounded-3xl p-6 sm:p-8 no-print">
+        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 border-b border-white/10 pb-5">
+          <div>
+            <span class="text-xs font-mono uppercase tracking-widest text-icecyan-400">Interactive Document Inspector</span>
+            <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-white mt-1">Live Dual-CV Studio (Visual Reference &amp; ATS-Friendly)</h2>
+            <p class="text-xs sm:text-sm text-slate-300 mt-1">
+              Switch between your <strong>Visual Styled CV</strong> and your <strong>Single-Column ATS-Friendly CV</strong>, highlight recruiter keywords in real time, copy plain text, or print/export directly to PDF.
+            </p>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-2.5">
+            <button type="button" id="btn-cv-visual" onclick="setCvFormat('visual')" class="px-4 py-2 rounded-xl text-xs font-bold bg-champagne-400 text-obsidian-950 transition-all">
+              1. Visual Styled CV
+            </button>
+            <button type="button" id="btn-cv-ats" onclick="setCvFormat('ats')" class="px-4 py-2 rounded-xl text-xs font-semibold bg-obsidian-800 text-slate-200 hover:text-white border border-white/15 transition-all">
+              2. ATS-Friendly CV
+            </button>
+            <button type="button" onclick="copyFullAtsText()" class="px-3.5 py-2 rounded-xl text-xs font-semibold bg-white/10 hover:bg-white/15 text-champagne-300 border border-champagne-400/30 transition-all">
+              Copy ATS Text
+            </button>
+            <button type="button" onclick="window.print()" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-icecyan-400 hover:bg-icecyan-300 text-obsidian-950 transition-all">
+              Print / Save PDF
+            </button>
+          </div>
+        </div>
+
+        <!-- Keyword Highlighter Bar -->
+        <div class="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
+          <div class="relative flex-1">
+            <input id="cv-keyword-input" type="text" oninput="highlightCvKeywords(this.value)" placeholder="Type a keyword to highlight inside the CV (e.g., WordPress, Elementor, WooCommerce, BCC, SEO, IELTS)..." class="w-full px-4 py-2 rounded-xl bg-obsidian-950 border border-white/15 text-xs text-white placeholder-slate-400 focus:outline-none focus:border-champagne-400">
+          </div>
+          <div class="flex flex-wrap items-center gap-1.5 text-xs">
+            <span class="text-slate-400 font-mono">Quick Highlight:</span>
+            <button type="button" onclick="quickHighlight('WordPress')" class="px-2.5 py-1 rounded-lg bg-white/5 hover:bg-white/10 text-slate-200 border border-white/10">WordPress</button>
+            <button type="button" onclick="quickHighlight('AI')" class="px-2.5 py-1 rounded-lg bg-white/5 hover:bg-white/10 text-slate-200 border border-white/10">AI</button>
+            <button type="button" onclick="quickHighlight('SEO')" class="px-2.5 py-1 rounded-lg bg-white/5 hover:bg-white/10 text-slate-200 border border-white/10">SEO</button>
+            <button type="button" onclick="quickHighlight('')" class="px-2.5 py-1 rounded-lg bg-rose-500/15 hover:bg-rose-500/25 text-rose-300 border border-rose-500/30">Clear</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rendered CV Sheet Container -->
+      <div id="print-cv-sheet" class="rounded-3xl overflow-hidden shadow-2xl border border-white/15 bg-white text-slate-900 max-w-5xl mx-auto">
+        <!-- Populated dynamically by setCvFormat('visual' | 'ats') -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="border-t border-white/10 bg-obsidian-950/90 py-8 mt-12 no-print">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+      <div class="flex items-center gap-3">
+        <span class="font-display font-bold text-white">JAYED JAMAN SEEN</span>
+        <span>•</span>
+        <span>WordPress Web Development &amp; AI Tools Specialist</span>
+      </div>
+      <div class="flex flex-wrap items-center gap-4">
+        <a href="mailto:thunderseen@gmail.com" class="hover:text-champagne-300 transition-colors">thunderseen@gmail.com</a>
+        <a href="https://www.linkedin.com/in/jayed-jaman-seen-b540b8334" target="_blank" rel="noopener noreferrer" class="hover:text-champagne-300 transition-colors">LinkedIn</a>
+        <a href="https://github.com/JJSEEN" target="_blank" rel="noopener noreferrer" class="hover:text-champagne-300 transition-colors">GitHub</a>
+        <a href="https://student-id-portal-1.onrender.com" target="_blank" rel="noopener noreferrer" class="hover:text-icecyan-300 transition-colors">Live Render Portal</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== MODAL 1: PROJECT CASE STUDY INSPECTOR ==================== -->
+  <div id="project-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/80 backdrop-blur-md no-print">
+    <div class="bento-card rounded-3xl max-w-2xl w-full p-6 sm:p-8 border border-champagne-400/40 space-y-5 max-h-[90vh] overflow-y-auto custom-scrollbar">
+      <div class="flex items-start justify-between gap-4 border-b border-white/10 pb-4">
+        <div>
+          <span id="modal-proj-badge" class="text-xs font-mono uppercase tracking-widest text-champagne-400">Case Study</span>
+          <h3 id="modal-proj-title" class="font-display text-xl sm:text-2xl font-extrabold text-white mt-1">Project Title</h3>
+        </div>
+        <button type="button" onclick="closeProjectModal()" class="p-2 rounded-xl bg-white/5 hover:bg-white/15 text-slate-300">✕</button>
+      </div>
+      <p id="modal-proj-desc" class="text-sm text-slate-300 leading-relaxed"></p>
+      <div>
+        <h4 class="text-xs font-mono uppercase tracking-wider text-icecyan-300 mb-2">Key Architecture &amp; Deliverables:</h4>
+        <ul id="modal-proj-bullets" class="space-y-1.5 text-xs sm:text-sm text-slate-200 list-disc list-inside"></ul>
+      </div>
+      <div>
+        <h4 class="text-xs font-mono uppercase tracking-wider text-champagne-300 mb-2">Tools &amp; Technologies Used:</h4>
+        <div id="modal-proj-tags" class="flex flex-wrap gap-1.5"></div>
+      </div>
+      <div class="pt-4 border-t border-white/10 flex flex-wrap items-center justify-end gap-3">
+        <a id="modal-proj-link" href="https://student-id-portal-1.onrender.com" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-xl bg-icecyan-400 hover:bg-icecyan-300 text-obsidian-950 font-bold text-xs">
+          Open Live Project ↗
+        </a>
+        <button type="button" onclick="closeProjectModal()" class="px-4 py-2 rounded-xl bg-white/10 hover:bg-white/15 text-white text-xs font-semibold">
+          Close Inspector
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== MODAL 2: COMMAND PALETTE (Ctrl+K) ==================== -->
+  <div id="cmd-modal" class="fixed inset-0 z-50 hidden items-start justify-center pt-20 p-4 bg-black/80 backdrop-blur-md no-print">
+    <div class="bento-card rounded-3xl max-w-xl w-full p-5 border border-champagne-400/40 space-y-4 shadow-2xl">
+      <div class="flex items-center gap-3 border-b border-white/10 pb-3">
+        <svg class="w-5 h-5 text-champagne-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+        <input id="cmd-search-input" type="text" oninput="renderCommandList(this.value)" placeholder="Type a command or section (e.g., CV, ATS, WordPress, WhatsApp, Render)..." class="w-full bg-transparent text-sm text-white placeholder-slate-400 focus:outline-none">
+        <button type="button" onclick="closeCommandPalette()" class="px-2 py-1 text-xs font-mono bg-white/10 rounded text-slate-300">ESC</button>
+      </div>
+      <div id="cmd-list-container" class="space-y-1.5 max-h-72 overflow-y-auto custom-scrollbar">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== MODAL 3: DIRECT HIRE / CONTACT COMPOSER ==================== -->
+  <div id="contact-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/80 backdrop-blur-md no-print">
+    <div class="bento-card rounded-3xl max-w-lg w-full p-6 sm:p-8 border border-champagne-400/40 space-y-4">
+      <div class="flex items-start justify-between gap-4 border-b border-white/10 pb-3">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-widest text-champagne-400">Direct Outreach</span>
+          <h3 class="font-display text-xl font-extrabold text-white mt-0.5">Start a Conversation with Jayed</h3>
+        </div>
+        <button type="button" onclick="closeContactModal()" class="p-2 rounded-xl bg-white/5 hover:bg-white/15 text-slate-300">✕</button>
+      </div>
+      <div class="space-y-3 text-xs">
+        <div>
+          <label for="contact-name" class="block text-slate-300 mb-1 font-medium">Your Name / Organization</label>
+          <input id="contact-name" type="text" placeholder="e.g., Sarah Jenkins / Apex Digital" class="w-full px-3.5 py-2 rounded-xl bg-obsidian-950 border border-white/15 text-white">
+        </div>
+        <div>
+          <label for="contact-topic" class="block text-slate-300 mb-1 font-medium">Collaboration Focus</label>
+          <select id="contact-topic" class="w-full px-3.5 py-2 rounded-xl bg-obsidian-950 border border-white/15 text-white">
+            <option value="WordPress & WooCommerce Website">WordPress &amp; WooCommerce Website</option>
+            <option value="Elementor Custom Design / Redesign">Elementor Custom Design / Redesign</option>
+            <option value="AI Workflow & Web Automation">AI Workflow &amp; Web Automation</option>
+            <option value="Keyword Research, SEO & B2B Lead Generation">Keyword Research, SEO &amp; B2B Lead Generation</option>
+            <option value="Remote / Full-Time Role Inquiry">Remote / Full-Time Role Inquiry</option>
+          </select>
+        </div>
+        <div>
+          <label for="contact-msg" class="block text-slate-300 mb-1 font-medium">Project / Role Details</label>
+          <textarea id="contact-msg" rows="3" placeholder="Share your timeline, website goals, or role details..." class="w-full px-3.5 py-2 rounded-xl bg-obsidian-950 border border-white/15 text-white"></textarea>
+        </div>
+      </div>
+      <div class="pt-3 border-t border-white/10 flex flex-col sm:flex-row gap-2.5">
+        <button type="button" onclick="submitDirectContact('whatsapp')" class="flex-1 py-2.5 px-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-obsidian-950 font-bold text-xs">
+          Send via WhatsApp
+        </button>
+        <button type="button" onclick="submitDirectContact('email')" class="flex-1 py-2.5 px-4 rounded-xl bg-champagne-400 hover:bg-champagne-300 text-obsidian-950 font-bold text-xs">
+          Send via Email
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== IN-PAGE TOAST NOTIFICATION ==================== -->
+  <div id="toast-box" class="fixed bottom-5 right-5 z-50 hidden items-center gap-2.5 px-4 py-3 rounded-2xl bg-obsidian-900 border border-champagne-400 text-xs font-medium text-white shadow-2xl no-print">
+    <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+    <span id="toast-text">Action completed</span>
+  </div>
+
+  <!-- ==================== APPLICATION LOGIC ==================== -->
+  <script>
+    const AVATAR_SRC = "data:image/jpeg;base64,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";
+
+    // 1. Grounded 5-Pillar Skill Inventory
+    const SKILLS_DATA = [
+      {
+        id: "wp-core",
+        cat: "wordpress",
+        pillar: "WordPress Web Development",
+        title: "WordPress Setup, Configuration & Site Management",
+        level: 96,
+        desc: "End-to-end WordPress installation, local & cloud staging, core configuration, security hardening, and ongoing site management.",
+        tags: ["WordPress CMS", "Localhost/Cloud", "Site Management", "SSL/Security"]
+      },
+      {
+        id: "wp-builders",
+        cat: "wordpress",
+        pillar: "WordPress Web Development",
+        title: "Elementor & Gutenberg Page Builders",
+        level: 95,
+        desc: "Pixel-accurate responsive layouts, custom landing pages, and conversion-focused sections using Elementor and Gutenberg block editor.",
+        tags: ["Elementor", "Gutenberg", "Responsive UI", "Landing Pages"]
+      },
+      {
+        id: "wp-themes",
+        cat: "wordpress",
+        pillar: "WordPress Web Development",
+        title: "Theme Customization, Child Themes, CPT & ACF",
+        level: 92,
+        desc: "Free and premium theme customization, child themes, Custom Post Types (CPT), and Advanced Custom Fields (ACF) for dynamic content.",
+        tags: ["Child Themes", "CPT", "ACF", "Theme Customization"]
+      },
+      {
+        id: "wp-woo",
+        cat: "wordpress",
+        pillar: "WordPress Web Development",
+        title: "WooCommerce, Multilingual & Membership Builds",
+        level: 91,
+        desc: "Complete WooCommerce online store setup, product catalogs, site-speed optimization, multilingual sites, and membership functionality.",
+        tags: ["WooCommerce", "Speed Optimization", "Multilingual", "Membership"]
+      },
+      {
+        id: "ai-workflows",
+        cat: "ai",
+        pillar: "Artificial Intelligence & Automation",
+        title: "Prompt Engineering & AI Development Workflows",
+        level: 95,
+        desc: "BCC-certified expertise in structured prompt engineering, AI-assisted web prototyping, code generation, and business productivity workflows.",
+        tags: ["Prompt Engineering", "ChatGPT", "Claude", "Google Gemini", "OpenAI Codex", "GitHub Copilot"]
+      },
+      {
+        id: "ai-media",
+        cat: "ai",
+        pillar: "Artificial Intelligence & Automation",
+        title: "Generative AI Content, Image, Video & Branding",
+        level: 92,
+        desc: "AI-powered content creation, visual branding assets, marketing copy, and automated multimedia production.",
+        tags: ["AI Content", "AI Branding", "AI Video/Image", "Marketing Automation"]
+      },
+      {
+        id: "seo-keywords",
+        cat: "seo",
+        pillar: "SEO, Keyword Research & Lead Generation",
+        title: "Keyword Research, Search Intent & Competitor Audits",
+        level: 94,
+        desc: "High-value keyword hunting, search-intent mapping, competitor gap analysis, and comprehensive website SEO auditing.",
+        tags: ["Google Keyword Planner", "Ahrefs", "SEMrush", "Ubersuggest"]
+      },
+      {
+        id: "seo-tech",
+        cat: "seo",
+        pillar: "SEO, Keyword Research & Lead Generation",
+        title: "On-Page, Technical & Local SEO + Lead Generation",
+        level: 93,
+        desc: "On-page, technical, and local SEO execution paired with targeted B2B/B2C prospect research and lead-generation outreach.",
+        tags: ["Rank Math", "Google Search Console", "GA4", "B2B/B2C Lead Gen"]
+      },
+      {
+        id: "mkt-social",
+        cat: "marketing",
+        pillar: "Digital Marketing & Creative Production",
+        title: "Social Media Strategy, Meta Ads & Email Marketing",
+        level: 91,
+        desc: "5+ years managing brand communication, content calendars, Meta Business Suite, Facebook Ads Manager, and email campaigns.",
+        tags: ["Meta Business Suite", "Facebook Ads", "Mailchimp", "Klaviyo", "Brevo"]
+      },
+      {
+        id: "mkt-creative",
+        cat: "marketing",
+        pillar: "Digital Marketing & Creative Production",
+        title: "Graphic Design, Video Editing & Commercial Photography",
+        level: 90,
+        desc: "Promotional graphics in Photoshop, Illustrator, and Canva; video editing in CapCut, Premiere Pro, and Filmora; commercial photography.",
+        tags: ["Photoshop", "Illustrator", "Canva", "Premiere Pro", "CapCut", "Filmora"]
+      },
+      {
+        id: "tools-office",
+        cat: "tools",
+        pillar: "Professional & Productivity Tools",
+        title: "Advanced Excel, Office Suite & IT Troubleshooting",
+        level: 92,
+        desc: "Microsoft Word, Excel (PivotTables, VLOOKUP, Goal Seek), PowerPoint, Google Workspace, and computer hardware/network troubleshooting.",
+        tags: ["Excel PivotTables", "VLOOKUP", "Goal Seek", "Google Workspace", "Hardware/Network"]
+      }
+    ];
+
+    // 2. Grounded Projects & Case Studies Inventory
+    const PROJECTS_DATA = [
+      {
+        id: "proj-id-portal",
+        cat: "webapp",
+        badge: "LIVE CLOUD WEB APP",
+        title: "Automated Student ID Card Web Application",
+        subtitle: "Department of Youth Development (DYD) • Hosted on Render",
+        desc: "Independently designed, built, and deployed a live web application for generating and managing student ID cards with automated data handling and print-ready layout precision.",
+        bullets: [
+          "Live production deployment accessible at student-id-portal-1.onrender.com.",
+          "Automated student profile formatting, photo alignment, and instant ID card preview.",
+          "Built with AI-assisted development workflows and responsive cross-device UI."
+        ],
+        tags: ["Web Application", "Render Cloud", "AI-Assisted Dev", "Responsive UI"],
+        link: "https://student-id-portal-1.onrender.com"
+      },
+      {
+        id: "proj-wp-ecom",
+        cat: "wordpress",
+        badge: "WORDPRESS & WOOCOMMERCE",
+        title: "Responsive WordPress & WooCommerce Storefronts",
+        subtitle: "Custom Business, Portfolio & E-Commerce Builds",
+        desc: "End-to-end WordPress website creation and customization using Elementor, Gutenberg, child themes, Custom Post Types (CPT), and Advanced Custom Fields (ACF).",
+        bullets: [
+          "Custom Elementor & Gutenberg layouts optimized for mobile responsiveness and fast page speed.",
+          "Full WooCommerce store configuration, product templates, and checkout flow setup.",
+          "Structured on-page SEO foundation using Rank Math and clean permalink architecture."
+        ],
+        tags: ["WordPress", "Elementor", "Gutenberg", "WooCommerce", "CPT & ACF"],
+        link: "https://www.linkedin.com/in/jayed-jaman-seen-b540b8334"
+      },
+      {
+        id: "proj-seo-leads",
+        cat: "seo",
+        badge: "SEO & B2B LEAD GEN",
+        title: "Keyword Research, Technical SEO & Lead Generation",
+        subtitle: "Search-Intent Mapping & Prospect Outreach Campaigns",
+        desc: "Data-driven keyword hunting, competitor gap analysis, technical website auditing, and verified B2B/B2C prospect list building.",
+        bullets: [
+          "Profitable keyword research and search-intent segmentation using Google Keyword Planner, Ahrefs, SEMrush, and Ubersuggest.",
+          "Technical and on-page SEO audits tracked via Google Search Console and Google Analytics 4 (GA4).",
+          "Targeted B2B/B2C prospect research and lead-generation outreach to support client conversion."
+        ],
+        tags: ["Ahrefs", "SEMrush", "Rank Math", "GA4 & GSC", "B2B Lead Gen"],
+        link: "https://www.linkedin.com/in/jayed-jaman-seen-b540b8334"
+      },
+      {
+        id: "proj-brand-ops",
+        cat: "brand",
+        badge: "5+ YEARS BRAND OPS",
+        title: "M/S Munni Trading & Co. / The Chanachur Factory",
+        subtitle: "Social Media, Commercial Photography & Digital Branding",
+        desc: "Long-term digital brand communication, content calendar execution, commercial photography/videography, and promotional graphics.",
+        bullets: [
+          "Manage end-to-end social media presence and digital brand communication across platforms (May 2021 – Present).",
+          "Produce commercial photography, videography, and promotional graphics in Photoshop, Illustrator, and Canva.",
+          "Plan promotional content calendars and support digital lead-generation campaigns."
+        ],
+        tags: ["Meta Business Suite", "Photoshop", "Illustrator", "Premiere Pro", "CapCut"],
+        link: "https://www.linkedin.com/in/jayed-jaman-seen-b540b8334"
+      }
+    ];
+
+    // 3. Estimator Service Presets
+    const ESTIMATOR_PRESETS = {
+      "wp-business": {
+        title: "WordPress Business / Portfolio Website",
+        baseDays: 4,
+        daysPerUnit: 0.5,
+        items: [
+          "WordPress installation, configuration & security setup",
+          "Custom responsive pages built with Elementor / Gutenberg",
+          "Child theme customization, Custom Post Types (CPT) & ACF",
+          "Mobile speed optimization & cross-browser QA"
+        ]
+      },
+      "woocommerce": {
+        title: "WooCommerce Online Store & E-Commerce",
+        baseDays: 6,
+        daysPerUnit: 0.6,
+        items: [
+          "Complete WooCommerce store setup & product catalog architecture",
+          "Custom Elementor product & checkout templates",
+          "Payment gateway, shipping & order workflow configuration",
+          "Site-speed & mobile conversion optimization"
+        ]
+      },
+      "ai-webapp": {
+        title: "AI-Assisted Web App / Custom Digital Portal",
+        baseDays: 5,
+        daysPerUnit: 0.6,
+        items: [
+          "Custom interactive web application architecture (like Student ID Portal)",
+          "AI-assisted workflow automation & dynamic data handling",
+          "Responsive UI with modern dashboard/portal controls",
+          "Cloud deployment (Render / GitHub integration)"
+        ]
+      },
+      "seo-leadgen": {
+        title: "Keyword Research, SEO Audit & B2B Lead Generation",
+        baseDays: 3,
+        daysPerUnit: 0.4,
+        items: [
+          "Profitable keyword research & search-intent analysis (Ahrefs, SEMrush)",
+          "Competitor analysis & complete website SEO audit",
+          "On-page, technical & local SEO implementation (Rank Math, GSC, GA4)",
+          "Targeted B2B/B2C prospect research & verified lead list"
+        ]
+      }
+    };
+
+    let currentEstimatorService = "wp-business";
+    let currentCvFormat = "visual";
+    let competencyChartInstance = null;
+
+    function showToast(message) {
+      const box = document.getElementById("toast-box");
+      const txt = document.getElementById("toast-text");
+      if (!box || !txt) return;
+      txt.textContent = message;
+      box.classList.remove("hidden");
+      box.classList.add("flex");
+      clearTimeout(window._toastTimer);
+      window._toastTimer = setTimeout(() => {
+        box.classList.add("hidden");
+        box.classList.remove("flex");
+      }, 3200);
+    }
+
+    function copyTextToClipboard(text, toastMsg) {
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(() => showToast(toastMsg || "Copied to clipboard!"));
+          return;
+        }
+      } catch (e) {}
+      const ta = document.createElement("textarea");
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand("copy"); } catch (e) {}
+      document.body.removeChild(ta);
+      showToast(toastMsg || "Copied to clipboard!");
+    }
+
+    function switchWorkspaceMode(mode, targetId) {
+      const el = document.getElementById(targetId);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+
+    function JumpAndFilterSkill(cat) {
+      filterSkills(cat);
+      const sec = document.getElementById("skills-sec");
+      if (sec) sec.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    function filterSkills(category) {
+      document.querySelectorAll(".skill-tab-btn").forEach(btn => {
+        if (btn.getAttribute("data-skill-cat") === category) {
+          btn.className = "skill-tab-btn px-3 py-1.5 rounded-xl text-xs font-bold bg-champagne-400 text-obsidian-950 transition-all";
+        } else {
+          btn.className = "skill-tab-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-obsidian-800 text-slate-300 hover:text-white border border-white/10 transition-all";
+        }
+      });
+
+      const list = category === "all" ? SKILLS_DATA : SKILLS_DATA.filter(s => s.cat === category);
+      const container = document.getElementById("skills-grid-container");
+      if (container) {
+        container.innerHTML = list.map(item => `
+          <div class="bento-card rounded-2xl p-4 flex flex-col justify-between space-y-3">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-1">
+                <span class="text-[10px] font-mono uppercase tracking-wider text-champagne-400">${item.pillar}</span>
+                <span class="text-xs font-mono font-bold text-icecyan-300">${item.level}%</span>
+              </div>
+              <h3 class="font-display font-bold text-sm text-white">${item.title}</h3>
+              <p class="text-xs text-slate-300 mt-1 leading-relaxed">${item.desc}</p>
+            </div>
+            <div class="space-y-2">
+              <div class="w-full h-1.5 rounded-full bg-obsidian-950 overflow-hidden">
+                <div class="h-full rounded-full bg-gradient-to-r from-champagne-400 to-icecyan-400" style="width: ${item.level}%"></div>
+              </div>
+              <div class="flex flex-wrap gap-1">
+                ${item.tags.map(t => `<span class="px-2 py-0.5 rounded text-[10px] font-mono bg-white/5 text-slate-300 border border-white/10">${t}</span>`).join("")}
+              </div>
+            </div>
+          </div>
+        `).join("");
+      }
+
+      const banner = document.getElementById("active-pillar-Banner");
+      if (banner) {
+        const names = {
+          all: "Showing all 5 core technical pillars from Jayed Jaman Seen's verified CV.",
+          wordpress: "Pillar 1 — WordPress Web Development: Installation, Elementor, Gutenberg, Child Themes, CPT, ACF, WooCommerce, Speed & Multilingual builds.",
+          ai: "Pillar 2 — Artificial Intelligence & Automation: BCC-certified prompt engineering, ChatGPT, Claude, Gemini, OpenAI Codex, GitHub Copilot & Generative AI media.",
+          seo: "Pillar 3 — SEO, Keyword Research & Lead Generation: Keyword Planner, Ahrefs, SEMrush, Ubersuggest, GSC, GA4, Rank Math & B2B/B2C prospect outreach.",
+          marketing: "Pillar 4 — Digital Marketing & Creative Production: Meta Business Suite, Facebook Ads, Mailchimp/Klaviyo/Brevo, Photoshop, Illustrator, Canva, Premiere Pro & CapCut.",
+          tools: "Pillar 5 — Professional & Productivity Tools: MS Word, Excel (PivotTables, VLOOKUP, Goal Seek), PowerPoint, Google Workspace & Hardware/Network Troubleshooting."
+        };
+        banner.textContent = names[category] || names.all;
+      }
+    }
+
+    function initCompetencyChart() {
+      const canvas = document.getElementById("competencyChart");
+      if (!canvas || typeof Chart === "undefined") return;
+      const ctx = canvas.getContext("2d");
+      if (competencyChartInstance) competencyChartInstance.destroy();
+      competencyChartInstance = new Chart(ctx, {
+        type: "radar",
+        data: {
+          labels: [
+            "WordPress & Woo",
+            "Elementor / Themes",
+            "AI & Prompt Eng.",
+            "SEO & Keywords",
+            "B2B Lead Gen",
+            "Creative & Video"
+          ],
+          datasets: [{
+            label: "Capability Index",
+            data: [96, 95, 95, 94, 93, 91],
+            backgroundColor: "rgba(224, 198, 147, 0.18)",
+            borderColor: "#e0c693",
+            pointBackgroundColor: "#96dde9",
+            pointBorderColor: "#090d10",
+            pointHoverBackgroundColor: "#ffffff",
+            borderWidth: 2
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            r: {
+              min: 70,
+              max: 100,
+              ticks: { display: false, stepSize: 10 },
+              grid: { color: "rgba(255, 255, 255, 0.1)" },
+              angleLines: { color: "rgba(255, 255, 255, 0.1)" },
+              pointLabels: {
+                color: "#e2e8f0",
+                font: { family: "Inter", size: 11, weight: "600" }
+              }
+            }
+          },
+          plugins: {
+            legend: { display: false }
+          }
+        }
+      });
+    }
+
+    function filterProjects(category) {
+      document.querySelectorAll(".proj-tab-btn").forEach(btn => {
+        if (btn.getAttribute("data-proj-cat") === category) {
+          btn.className = "proj-tab-btn px-3 py-1.5 rounded-xl text-xs font-bold bg-icecyan-400 text-obsidian-950 transition-all";
+        } else {
+          btn.className = "proj-tab-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-obsidian-800 text-slate-300 hover:text-white border border-white/10 transition-all";
+        }
+      });
+
+      const list = category === "all" ? PROJECTS_DATA : PROJECTS_DATA.filter(p => p.cat === category);
+      const container = document.getElementById("projects-grid-container");
+      if (!container) return;
+      container.innerHTML = list.map(p => `
+        <div class="bento-card rounded-3xl p-6 flex flex-col justify-between space-y-4">
+          <div class="space-y-2.5">
+            <div class="flex items-center justify-between gap-2">
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-champagne-400/15 text-champagne-300 border border-champagne-400/30">${p.badge}</span>
+            </div>
+            <h3 class="font-display font-bold text-lg text-white">${p.title}</h3>
+            <p class="text-xs text-icecyan-300 font-medium">${p.subtitle}</p>
+            <p class="text-xs text-slate-300 leading-relaxed">${p.desc}</p>
+          </div>
+          <div class="space-y-3 pt-2 border-t border-white/10">
+            <div class="flex flex-wrap gap-1.5">
+              ${p.tags.map(t => `<span class="px-2 py-0.5 rounded text-[10px] font-mono bg-obsidian-950 text-slate-300 border border-white/10">${t}</span>`).join("")}
+            </div>
+            <div class="flex items-center gap-2">
+              <button type="button" onclick="openProjectModal('${p.id}')" class="flex-1 py-2 px-3 rounded-xl bg-white/10 hover:bg-white/15 text-white font-semibold text-xs transition-all">
+                Inspect Architecture
+              </button>
+              <a href="${p.link}" target="_blank" rel="noopener noreferrer" class="py-2 px-3 rounded-xl bg-champagne-400/20 hover:bg-champagne-400/30 text-champagne-300 border border-champagne-400/30 font-semibold text-xs transition-all">
+                Live ↗
+              </a>
+            </div>
+          </div>
+        </div>
+      `).join("");
+    }
+
+    function openProjectModal(projId) {
+      const p = PROJECTS_DATA.find(x => x.id === projId);
+      if (!p) return;
+      document.getElementById("modal-proj-badge").textContent = p.badge;
+      document.getElementById("modal-proj-title").textContent = p.title;
+      document.getElementById("modal-proj-desc").textContent = p.desc;
+      document.getElementById("modal-proj-bullets").innerHTML = p.bullets.map(b => `<li>${b}</li>`).join("");
+      document.getElementById("modal-proj-tags").innerHTML = p.tags.map(t => `<span class="px-2.5 py-1 rounded-lg text-xs font-mono bg-obsidian-950 text-champagne-300 border border-champagne-400/30">${t}</span>`).join("");
+      const linkEl = document.getElementById("modal-proj-link");
+      linkEl.href = p.link;
+      const modal = document.getElementById("project-modal");
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+    }
+
+    function closeProjectModal() {
+      const modal = document.getElementById("project-modal");
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+    }
+
+    function selectEstimatorService(srvKey) {
+      currentEstimatorService = srvKey;
+      document.querySelectorAll(".est-srv-btn").forEach(btn => {
+        if (btn.getAttribute("data-service") === srvKey) {
+          btn.className = "est-srv-btn text-left p-3.5 rounded-2xl border border-champagne-400 bg-champagne-400/15 transition-all";
+        } else {
+          btn.className = "est-srv-btn text-left p-3.5 rounded-2xl border border-white/10 bg-obsidian-950/60 hover:border-white/30 transition-all";
+        }
+      });
+      updateEstimator();
+    }
+
+    function updateEstimator() {
+      const preset = ESTIMATOR_PRESETS[currentEstimatorService] || ESTIMATOR_PRESETS["wp-business"];
+      const units = parseInt(document.getElementById("scope-slider").value || "5", 10);
+      document.getElementById("scope-slider-label").textContent = `${units} ${units === 1 ? "Unit / Page" : "Units / Pages"}`;
+
+      let minDays = Math.round(preset.baseDays + units * preset.daysPerUnit);
+      const items = [...preset.items];
+
+      if (document.getElementById("addon-seo").checked) {
+        minDays += 1;
+        items.push("Keyword Research, Search-Intent Mapping & On-Page SEO (Rank Math / GSC)");
+      }
+      if (document.getElementById("addon-leads").checked) {
+        minDays += 2;
+        items.push("Targeted B2B/B2C Prospect Research & Verified Lead Generation Sheet");
+      }
+      if (document.getElementById("addon-ai").checked) {
+        minDays += 1;
+        items.push("AI-Assisted Copywriting, Promotional Graphics & Brand Visuals");
+      }
+      if (document.getElementById("addon-multi").checked) {
+        minDays += 2;
+        items.push("Multilingual / Membership Architecture with Custom Post Types (CPT) & ACF");
+      }
+
+      const maxDays = minDays + 2;
+      document.getElementById("est-summary-title").textContent = preset.title;
+      document.getElementById("est-days-badge").textContent = `${minDays}–${maxDays} Days`;
+      document.getElementById("est-deliverables-list").innerHTML = items.map(i => `<li class="flex items-start gap-2"><span class="text-champagne-400 font-bold">✓</span><span>${i}</span></li>`).join("");
+    }
+
+    function getEstimatorBriefText() {
+      const preset = ESTIMATOR_PRESETS[currentEstimatorService];
+      const units = document.getElementById("scope-slider").value;
+      const days = document.getElementById("est-days-badge").textContent;
+      return `Hi Jayed, I configured a project on your portfolio:\n• Service: ${preset.title}\n• Scale: ${units} Units/Pages\n• Estimated Window: ${days}\nLet's discuss the next steps!`;
+    }
+
+    function sendEstimatorViaWhatsApp() {
+      const text = encodeURIComponent(getEstimatorBriefText());
+      window.open(`https://wa.me/8801307758119?text=${text}`, "_blank", "noopener,noreferrer");
+    }
+
+    function sendEstimatorViaEmail() {
+      const preset = ESTIMATOR_PRESETS[currentEstimatorService];
+      const subj = encodeURIComponent(`Project Inquiry: ${preset.title}`);
+      const body = encodeURIComponent(getEstimatorBriefText());
+      window.location.href = `mailto:thunderseen@gmail.com?subject=${subj}&body=${body}`;
+    }
+
+    function copyEstimatorBrief() {
+      copyTextToClipboard(getEstimatorBriefText(), "Project brief copied to clipboard!");
+    }
+
+    // 4. Dual-CV Studio Renderer (Visual Styled CV vs. ATS-Friendly Single-Column CV)
+    function setCvFormat(fmt) {
+      currentCvFormat = fmt;
+      const btnVis = document.getElementById("btn-cv-visual");
+      const btnAts = document.getElementById("btn-cv-ats");
+      if (btnVis && btnAts) {
+        if (fmt === "visual") {
+          btnVis.className = "px-4 py-2 rounded-xl text-xs font-bold bg-champagne-400 text-obsidian-950 transition-all";
+          btnAts.className = "px-4 py-2 rounded-xl text-xs font-semibold bg-obsidian-800 text-slate-200 hover:text-white border border-white/15 transition-all";
+        } else {
+          btnAts.className = "px-4 py-2 rounded-xl text-xs font-bold bg-champagne-400 text-obsidian-950 transition-all";
+          btnVis.className = "px-4 py-2 rounded-xl text-xs font-semibold bg-obsidian-800 text-slate-200 hover:text-white border border-white/15 transition-all";
+        }
+      }
+      renderCvSheet();
+      const kwInput = document.getElementById("cv-keyword-input");
+      if (kwInput && kwInput.value.trim()) {
+        highlightCvKeywords(kwInput.value);
+      }
+    }
+
+    function renderCvSheet() {
+      const container = document.getElementById("print-cv-sheet");
+      if (!container) return;
+
+      if (currentCvFormat === "visual") {
+        container.innerHTML = `
+          <div class="bg-[#161d21] text-white p-6 sm:p-8 border-t-4 border-[#e0c693] flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div class="space-y-2 flex-1">
+              <h3 class="text-2xl sm:text-3xl font-extrabold tracking-wider uppercase">JAYED JAMAN SEEN</h3>
+              <div class="text-sm sm:text-base font-extrabold tracking-wide uppercase">
+                <span class="text-white">WORDPRESS WEB DEVELOPMENT &amp; </span>
+                <span class="text-[#e0c693]">AI TOOLS </span>
+                <span class="text-[#96dde9]">SPECIALIST</span>
+              </div>
+              <p class="text-xs sm:text-sm text-slate-200 leading-relaxed max-w-2xl">
+                Computer Science &amp; Engineering undergraduate and WordPress web developer combining hands-on site-building skills (Elementor, Gutenberg, WooCommerce) with AI-assisted workflows, SEO fundamentals, and lead-generation research. BCC-certified in <strong>Artificial Intelligence for Professionals</strong> and completing the 600-hour DYD Freelancing &amp; ICT program (First-Month Class Representative).
+              </p>
+            </div>
+            <div class="w-24 h-28 sm:w-28 sm:h-32 rounded-lg overflow-hidden border-2 border-[#e0c693] flex-shrink-0 bg-slate-900">
+              <img src="${AVATAR_SRC}" alt="Jayed Jaman Seen" class="w-full h-full object-cover">
+            </div>
+          </div>
+          <div class="bg-[#101518] text-slate-100 px-6 py-3 text-xs font-semibold flex flex-wrap items-center justify-between gap-3 border-b-2 border-[#126e7d]">
+            <span>📞 +880 1307-758119</span>
+            <span>✉ thunderseen@gmail.com</span>
+            <span>🔗 linkedin.com/in/jayed-jaman-seen-b540b8334</span>
+            <span>💻 github.com/JJSEEN</span>
+            <span>📍 Barishal, Bangladesh</span>
+          </div>
+          <div class="p-6 sm:p-8 grid grid-cols-1 md:grid-cols-2 gap-8 bg-white text-slate-800 text-xs sm:text-sm">
+            <div class="space-y-6">
+              <div>
+                <h4 class="font-extrabold text-sm uppercase tracking-wider text-slate-900">EDUCATION</h4>
+                <div class="w-24 h-0.5 bg-gradient-to-r from-[#126e7d] to-[#9e782f] mt-1 mb-3"></div>
+                <div class="space-y-3">
+                  <div>
+                    <div class="font-bold text-slate-900">B.Sc. in Computer Science and Engineering</div>
+                    <div class="text-slate-700">Trust University, Barishal</div>
+                    <div class="text-xs italic text-[#126e7d] font-semibold">In Progress</div>
+                  </div>
+                  <div>
+                    <div class="font-bold text-slate-900">Higher Secondary Certificate (HSC), Science</div>
+                    <div class="text-slate-700">Government Syed Hatem Ali College, Barishal</div>
+                    <div class="text-xs italic text-[#126e7d] font-semibold">2020 | GPA: 5.00 / 5.00</div>
+                  </div>
+                  <div>
+                    <div class="font-bold text-slate-900">Secondary School Certificate (SSC), Science</div>
+                    <div class="text-slate-700">Shahid Abdur Rab Serniyabad Government Secondary School, Barishal</div>
+                    <div class="text-xs italic text-[#126e7d] font-semibold">2018 | GPA: 4.61 / 5.00</div>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h4 class="font-extrabold text-sm uppercase tracking-wider text-slate-900">CERTIFICATIONS &amp; PROFESSIONAL TRAINING</h4>
+                <div class="w-24 h-0.5 bg-gradient-to-r from-[#126e7d] to-[#9e782f] mt-1 mb-3"></div>
+                <div class="space-y-3">
+                  <div>
+                    <div class="font-bold text-slate-900">▪ Artificial Intelligence for Professionals</div>
+                    <div class="text-slate-700">Bangladesh Computer Council (BCC), ICT Division – Regional Office, Barishal <span class="italic text-[#126e7d] font-semibold">(2026, Completed)</span></div>
+                    <div class="text-slate-600 text-xs mt-0.5">Professional training in AI tools, prompt engineering, generative AI workflows, and AI-assisted business productivity.</div>
+                  </div>
+                  <div>
+                    <div class="font-bold text-slate-900">▪ Freelancing &amp; ICT Skills Development Training (600 Hours, 8th Batch)</div>
+                    <div class="text-slate-700">Department of Youth Development (DYD), Barishal – e-Learning &amp; Earning Ltd. <span class="italic text-[#126e7d] font-semibold">(Oct–Dec 2026, In Progress)</span></div>
+                    <div class="text-slate-600 text-xs mt-0.5"><strong>Curriculum:</strong> WordPress Development; Digital Marketing &amp; Keyword Research; AI-Assisted Lead Generation; AI Content Creation &amp; Graphic Design; AI Video Editing; Office Applications &amp; Computer Hardware; Online Freelancing Marketplaces; Professional Soft Skills &amp; Communicative English.</div>
+                    <div class="text-slate-600 text-xs mt-0.5"><strong>Leadership:</strong> Elected First-Month Class Representative, coordinating trainee communication for the batch.</div>
+                  </div>
+                  <div>
+                    <div class="font-bold text-slate-900">▪ Additional Professional Learning</div>
+                    <div class="text-slate-600 text-xs mt-0.5">Generative AI Workshop, GrowthSchool (2026) • Claude 101 Workshop, Anthropic AI Training (2026) • BCIT ISEP, English Level TAE 3 (2023).</div>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h4 class="font-extrabold text-sm uppercase tracking-wider text-slate-900">LEADERSHIP &amp; ACHIEVEMENTS</h4>
+                <div class="w-24 h-0.5 bg-gradient-to-r from-[#126e7d] to-[#9e782f] mt-1 mb-3"></div>
+                <ul class="space-y-1.5 text-xs text-slate-700 list-disc list-inside">
+                  <li><strong>Class Representative:</strong> DYD Freelancing &amp; ICT Skills Development Training, 8th Batch (2026).</li>
+                  <li><strong>Best Volunteer Award:</strong> Lal Sabuj Society, Barishal District Branch, for community welfare, youth engagement, and child journalism (2016–2018; certified 2019).</li>
+                  <li><strong>National Archery Competitor:</strong> Bangladesh U-16 National Archery Championship; completed the NSC Root-Level Talent Hunt Zonal Archery Training Program (2016).</li>
+                  <li><strong>Student Leadership:</strong> Elected Student Cabinet Member, School Student Parliament, Shahid Abdur Rab Serniyabad Government Secondary School, Barishal.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="space-y-6">
+              <div>
+                <h4 class="font-extrabold text-sm uppercase tracking-wider text-slate-900">CORE TECHNICAL SKILLS</h4>
+                <div class="w-24 h-0.5 bg-gradient-to-r from-[#126e7d] to-[#9e782f] mt-1 mb-3"></div>
+                <ul class="space-y-2 text-xs text-slate-700">
+                  <li><strong class="text-slate-900">• WordPress Web Development:</strong> WordPress installation, configuration, and site management; Elementor and Gutenberg page builders; free and premium theme customization; child themes, Custom Post Types (CPT), and Advanced Custom Fields (ACF); WooCommerce store setup and customization; responsive design and site-speed optimization; multilingual and membership website builds.</li>
+                  <li><strong class="text-slate-900">• Artificial Intelligence &amp; Automation:</strong> Prompt engineering and AI-assisted development workflows; ChatGPT, Claude, Google Gemini, OpenAI Codex, and GitHub Copilot; AI-powered content, image, video, and branding tools; generative AI applications for digital marketing and productivity.</li>
+                  <li><strong class="text-slate-900">• SEO, Keyword Research &amp; Lead Generation:</strong> Keyword research and search-intent analysis; competitor analysis and website auditing; on-page, technical, and local SEO fundamentals; Google Keyword Planner, Ahrefs, SEMrush, and Ubersuggest; Google Search Console, Google Analytics 4, and Rank Math; B2B/B2C prospect research and lead generation.</li>
+                  <li><strong class="text-slate-900">• Digital Marketing &amp; Creative Production:</strong> Social media management and content strategy; Meta Business Suite and Facebook Ads Manager; email marketing with Mailchimp, Klaviyo, and Brevo; graphic design in Photoshop, Illustrator, and Canva; video editing with CapCut, Premiere Pro, and Filmora; commercial photography and videography.</li>
+                  <li><strong class="text-slate-900">• Professional &amp; Productivity Tools:</strong> Microsoft Word, Excel (PivotTables, VLOOKUP, Goal Seek), and PowerPoint; Google Workspace; basic computer hardware and network troubleshooting.</li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 class="font-extrabold text-sm uppercase tracking-wider text-slate-900">PROFESSIONAL EXPERIENCE</h4>
+                <div class="w-24 h-0.5 bg-gradient-to-r from-[#126e7d] to-[#9e782f] mt-1 mb-3"></div>
+                <div class="space-y-3 text-xs text-slate-700">
+                  <div>
+                    <div class="font-bold text-slate-900">WordPress Web Developer &amp; AI Tools Specialist</div>
+                    <div class="italic text-[#126e7d] font-semibold">Freelance / Independent Projects | 2025 – Present</div>
+                    <ul class="list-disc list-inside mt-1 space-y-1">
+                      <li>Design, build, and customize responsive WordPress websites and WooCommerce stores using Elementor, Gutenberg, and relevant plugins.</li>
+                      <li>Apply keyword research, competitor analysis, SEO fundamentals, and B2B/B2C lead-generation outreach.</li>
+                      <li>Independently designed, built, and deployed a student ID card web application, live on Render (student-id-portal-1.onrender.com).</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <div class="font-bold text-slate-900">Social Media &amp; Digital Marketing Specialist</div>
+                    <div class="italic text-[#126e7d] font-semibold">M/S Munni Trading &amp; Co. / The Chanachur Factory, Barishal | May 2021 – Present</div>
+                    <ul class="list-disc list-inside mt-1 space-y-1">
+                      <li>Manage end-to-end social media presence, promotional content calendars, commercial photography/videography, promotional graphics, and digital lead generation.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h4 class="font-extrabold text-sm uppercase tracking-wider text-slate-900">LANGUAGES &amp; COMMUNICATION</h4>
+                <div class="w-24 h-0.5 bg-gradient-to-r from-[#126e7d] to-[#9e782f] mt-1 mb-3"></div>
+                <ul class="space-y-1.5 text-xs text-slate-700 list-disc list-inside">
+                  <li><strong>English Proficiency:</strong> IELTS Academic Band 6.0 (Speaking 6.0; CEFR B2); Duolingo English Test 90/160.</li>
+                  <li><strong>Strong Professional Communication:</strong> Client communication, interpersonal skills, team coordination, and stakeholder interaction with people from all backgrounds.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        `;
+      } else {
+        container.innerHTML = `
+          <div class="p-6 sm:p-10 bg-white text-slate-900 space-y-5 text-xs sm:text-sm leading-relaxed">
+            <div class="text-center border-b-2 border-slate-900 pb-4">
+              <h3 class="text-2xl font-extrabold tracking-wide text-slate-900 uppercase">JAYED JAMAN SEEN</h3>
+              <div class="text-sm sm:text-base font-bold text-[#1e3a8a] mt-0.5">WordPress Web Development &amp; AI Tools Specialist</div>
+              <p class="text-xs text-slate-700 mt-1">
+                Barishal, Bangladesh &nbsp;|&nbsp; +880 1307-758119 (Phone/WhatsApp) &nbsp;|&nbsp; thunderseen@gmail.com<br>
+                linkedin.com/in/jayed-jaman-seen-b540b8334 &nbsp;|&nbsp; github.com/JJSEEN &nbsp;|&nbsp; student-id-portal-1.onrender.com
+              </p>
+            </div>
+
+            <div>
+              <h4 class="font-bold text-xs sm:text-sm uppercase tracking-wider text-slate-900 border-b border-slate-300 pb-1 mb-2">PROFESSIONAL SUMMARY</h4>
+              <p class="text-slate-800">
+                Computer Science &amp; Engineering undergraduate and WordPress web developer who combines hands-on site-building skills with AI-assisted workflows and a digital marketing background. Builds and customizes responsive WordPress sites with Elementor, Gutenberg, and WooCommerce, backed by SEO fundamentals and lead-generation research that help client sites get found and convert. Over five years of experience managing social media, content, and brand communication for a retail business, now channeled into freelance web development and AI-assisted digital solutions. BCC-certified in Artificial Intelligence for Professionals, and currently completing a 600-hour government-sponsored Freelancing &amp; ICT Skills Development program (DYD, 8th Batch), where elected Class Representative in the program's first month.
+              </p>
+            </div>
+
+            <div>
+              <h4 class="font-bold text-xs sm:text-sm uppercase tracking-wider text-slate-900 border-b border-slate-300 pb-1 mb-2">CORE TECHNICAL SKILLS</h4>
+              <ul class="space-y-1.5 list-disc list-inside text-slate-800">
+                <li><strong>WordPress Web Development:</strong> WordPress installation, configuration, and site management; Elementor and Gutenberg page builders; free and premium theme customization; child themes, Custom Post Types (CPT), and Advanced Custom Fields (ACF); WooCommerce store setup and customization; responsive design and site-speed optimization; multilingual and membership website builds.</li>
+                <li><strong>Artificial Intelligence &amp; Automation:</strong> Prompt engineering and AI-assisted development workflows; ChatGPT, Claude, Google Gemini, OpenAI Codex, and GitHub Copilot; AI-powered content, image, video, and branding tools; generative AI applications for digital marketing and productivity.</li>
+                <li><strong>SEO, Keyword Research &amp; Lead Generation:</strong> Keyword research and search-intent analysis; competitor analysis and website auditing; on-page, technical, and local SEO fundamentals; Google Keyword Planner, Ahrefs, SEMrush, and Ubersuggest; Google Search Console, Google Analytics 4, and Rank Math; B2B/B2C prospect research and lead generation.</li>
+                <li><strong>Digital Marketing &amp; Creative Production:</strong> Social media management and content strategy; Meta Business Suite and Facebook Ads Manager; email marketing with Mailchimp, Klaviyo, and Brevo; graphic design in Photoshop, Illustrator, and Canva; video editing with CapCut, Premiere Pro, and Filmora; commercial photography and videography.</li>
+                <li><strong>Professional &amp; Productivity Tools:</strong> Microsoft Word, Excel (PivotTables, VLOOKUP, Goal Seek), and PowerPoint; Google Workspace; basic computer hardware and network troubleshooting.</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="font-bold text-xs sm:text-sm uppercase tracking-wider text-slate-900 border-b border-slate-300 pb-1 mb-2">PROFESSIONAL EXPERIENCE</h4>
+              <div class="space-y-3">
+                <div>
+                  <div class="flex justify-between font-bold text-slate-900">
+                    <span>WordPress Web Developer &amp; AI Tools Specialist</span>
+                    <span>2025 – Present</span>
+                  </div>
+                  <div class="flex justify-between italic text-xs text-slate-600 mb-1">
+                    <span>Freelance / Independent Projects (Remote, Barishal)</span>
+                    <span>Live Project: student-id-portal-1.onrender.com</span>
+                  </div>
+                  <ul class="list-disc list-inside space-y-1 text-slate-800">
+                    <li>Design, build, and customize responsive WordPress websites for business, portfolio, and blog clients using Elementor, Gutenberg, and relevant plugins.</li>
+                    <li>Set up and configure WooCommerce stores and core e-commerce functionality.</li>
+                    <li>Apply keyword research, competitor analysis, and SEO fundamentals to strengthen site structure and search visibility.</li>
+                    <li>Conduct B2B/B2C prospect research and lead-generation outreach to support client growth.</li>
+                    <li>Independently designed, built, and deployed a student ID card web application, live on Render (student-id-portal-1.onrender.com).</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <div class="flex justify-between font-bold text-slate-900">
+                    <span>Social Media &amp; Digital Marketing Specialist</span>
+                    <span>May 2021 – Present</span>
+                  </div>
+                  <div class="flex justify-between italic text-xs text-slate-600 mb-1">
+                    <span>M/S Munni Trading &amp; Co. / The Chanachur Factory</span>
+                    <span>Barishal, Bangladesh</span>
+                  </div>
+                  <ul class="list-disc list-inside space-y-1 text-slate-800">
+                    <li>Manage end-to-end social media presence and digital brand communication across platforms.</li>
+                    <li>Plan and maintain promotional content calendars that sustain consistent audience engagement.</li>
+                    <li>Produce commercial photography, videography, and promotional graphics for marketing campaigns.</li>
+                    <li>Support online promotion and digital lead-generation efforts for the business.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h4 class="font-bold text-xs sm:text-sm uppercase tracking-wider text-slate-900 border-b border-slate-300 pb-1 mb-2">CERTIFICATIONS &amp; PROFESSIONAL TRAINING</h4>
+              <div class="space-y-2.5">
+                <div>
+                  <div class="flex justify-between font-bold text-slate-900">
+                    <span>Artificial Intelligence for Professionals</span>
+                    <span>2026 | Completed</span>
+                  </div>
+                  <div class="italic text-xs text-slate-600">Bangladesh Computer Council (BCC), ICT Division – Regional Office, Barishal</div>
+                  <p class="text-slate-800 mt-0.5">Professional training in AI tools, prompt engineering, generative AI workflows, and AI-assisted business productivity.</p>
+                </div>
+                <div>
+                  <div class="flex justify-between font-bold text-slate-900">
+                    <span>Freelancing &amp; ICT Skills Development Training (600 Hours, 8th Batch)</span>
+                    <span>October 2026 – December 2026 | In Progress</span>
+                  </div>
+                  <div class="italic text-xs text-slate-600">Department of Youth Development (DYD), Barishal – e-Learning &amp; Earning Ltd.</div>
+                  <p class="text-slate-800 mt-0.5"><strong>Curriculum:</strong> WordPress Development; Digital Marketing &amp; Keyword Research; AI-Assisted Lead Generation; AI Content Creation &amp; Graphic Design; AI Video Editing; Office Applications &amp; Computer Hardware; Online Freelancing Marketplaces; Professional Soft Skills &amp; Communicative English. <strong>Leadership:</strong> Elected First-Month Class Representative, coordinating trainee communication for the batch.</p>
+                </div>
+                <div>
+                  <div class="flex justify-between font-bold text-slate-900">
+                    <span>Additional Professional Learning</span>
+                    <span>2023 – 2026</span>
+                  </div>
+                  <p class="text-slate-800">Generative AI Workshop, GrowthSchool (2026) &nbsp;|&nbsp; Claude 101 Workshop, Anthropic AI Training (2026) &nbsp;|&nbsp; BCIT ISEP, English Level TAE 3 (2023).</p>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h4 class="font-bold text-xs sm:text-sm uppercase tracking-wider text-slate-900 border-b border-slate-300 pb-1 mb-2">EDUCATION</h4>
+              <div class="space-y-1.5">
+                <div class="flex justify-between">
+                  <span><strong>B.Sc. in Computer Science and Engineering</strong> – Trust University, Barishal</span>
+                  <span class="font-semibold">In Progress</span>
+                </div>
+                <div class="flex justify-between">
+                  <span><strong>Higher Secondary Certificate (HSC), Science</strong> – Government Syed Hatem Ali College, Barishal</span>
+                  <span class="font-semibold">2020 | GPA: 5.00 / 5.00</span>
+                </div>
+                <div class="flex justify-between">
+                  <span><strong>Secondary School Certificate (SSC), Science</strong> – Shahid Abdur Rab Serniyabad Government Secondary School, Barishal</span>
+                  <span class="font-semibold">2018 | GPA: 4.61 / 5.00</span>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h4 class="font-bold text-xs sm:text-sm uppercase tracking-wider text-slate-900 border-b border-slate-300 pb-1 mb-2">LEADERSHIP &amp; ACHIEVEMENTS</h4>
+              <ul class="list-disc list-inside space-y-1 text-slate-800">
+                <li><strong>Class Representative:</strong> DYD Freelancing &amp; ICT Skills Development Training, 8th Batch (2026).</li>
+                <li><strong>Best Volunteer Award:</strong> Lal Sabuj Society, Barishal District Branch, for community welfare, youth engagement, and child journalism (2016–2018; certified 2019).</li>
+                <li><strong>National Archery Competitor:</strong> Bangladesh U-16 National Archery Championship; completed the NSC Root-Level Talent Hunt Zonal Archery Training Program (2016).</li>
+                <li><strong>Student Leadership:</strong> Elected Student Cabinet Member, School Student Parliament, Shahid Abdur Rab Serniyabad Government Secondary School, Barishal.</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="font-bold text-xs sm:text-sm uppercase tracking-wider text-slate-900 border-b border-slate-300 pb-1 mb-2">LANGUAGES &amp; COMMUNICATION</h4>
+              <ul class="list-disc list-inside space-y-1 text-slate-800">
+                <li><strong>English Proficiency:</strong> IELTS Academic Band 6.0 (Speaking 6.0; CEFR B2); Duolingo English Test 90/160.</li>
+                <li><strong>Strong Professional Communication:</strong> Client communication, interpersonal skills, team coordination, and stakeholder interaction with people from all backgrounds.</li>
+              </ul>
+            </div>
+          </div>
+        `;
+      }
+    }
+
+    function quickHighlight(term) {
+      const inp = document.getElementById("cv-keyword-input");
+      if (inp) {
+        inp.value = term;
+        highlightCvKeywords(term);
+      }
+    }
+
+    function highlightCvKeywords(query) {
+      renderCvSheet();
+      const q = (query || "").trim();
+      if (!q) return;
+      const sheet = document.getElementById("print-cv-sheet");
+      if (!sheet) return;
+      const escaped = q.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      const regex = new RegExp(`(${escaped})`, "gi");
+
+      const walk = document.createTreeWalker(sheet, NodeFilter.SHOW_TEXT, null, false);
+      const nodes = [];
+      while (walk.nextNode()) nodes.push(walk.currentNode);
+      nodes.forEach(node => {
+        if (node.parentNode && ["SCRIPT", "STYLE", "MARK"].includes(node.parentNode.tagName)) return;
+        if (regex.test(node.nodeValue)) {
+          const span = document.createElement("span");
+          span.innerHTML = node.nodeValue.replace(regex, '<mark class="cv-hl">$1</mark>');
+          node.parentNode.replaceChild(span, node);
+        }
+      });
+    }
+
+    function copyFullAtsText() {
+      setCvFormat("ats");
+      const sheet = document.getElementById("print-cv-sheet");
+      const txt = sheet ? sheet.innerText : "";
+      copyTextToClipboard(txt, "Full ATS-Friendly CV text copied to clipboard!");
+    }
+
+    // 5. Command Palette (Ctrl+K)
+    const COMMAND_ACTIONS = [
+      { label: "Switch to Visual Styled CV Preview", tag: "CV Studio", run: () => { setCvFormat("visual"); switchWorkspaceMode("cv", "cv-studio-sec"); } },
+      { label: "Switch to ATS-Friendly Single-Column CV", tag: "CV Studio", run: () => { setCvFormat("ats"); switchWorkspaceMode("cv", "cv-studio-sec"); } },
+      { label: "Copy Full ATS-Friendly CV Text", tag: "Clipboard", run: () => copyFullAtsText() },
+      { label: "Configure Project & Timeline Estimator", tag: "Interactive Tool", run: () => switchWorkspaceMode("portfolio", "estimator-sec") },
+      { label: "Filter Skills: WordPress & WooCommerce", tag: "Skills", run: () => JumpAndFilterSkill("wordpress") },
+      { label: "Filter Skills: Artificial Intelligence & Automation", tag: "Skills", run: () => JumpAndFilterSkill("ai") },
+      { label: "Filter Skills: SEO, Keyword Research & Lead Gen", tag: "Skills", run: () => JumpAndFilterSkill("seo") },
+      { label: "Launch Live Student ID Card Portal (Render)", tag: "External App", run: () => window.open("https://student-id-portal-1.onrender.com", "_blank", "noopener,noreferrer") },
+      { label: "Copy Email Address (thunderseen@gmail.com)", tag: "Contact", run: () => copyTextToClipboard("thunderseen@gmail.com", "Email copied!") },
+      { label: "Copy Phone / WhatsApp (+880 1307-758119)", tag: "Contact", run: () => copyTextToClipboard("+880 1307-758119", "Phone number copied!") }
+    ];
+
+    function openCommandPalette() {
+      const modal = document.getElementById("cmd-modal");
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+      const inp = document.getElementById("cmd-search-input");
+      if (inp) {
+        inp.value = "";
+        renderCommandList("");
+        setTimeout(() => inp.focus(), 50);
+      }
+    }
+
+    function closeCommandPalette() {
+      const modal = document.getElementById("cmd-modal");
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+    }
+
+    function renderCommandList(query) {
+      const q = (query || "").toLowerCase().trim();
+      const list = COMMAND_ACTIONS.filter(a => !q || a.label.toLowerCase().includes(q) || a.tag.toLowerCase().includes(q));
+      const container = document.getElementById("cmd-list-container");
+      if (!container) return;
+      container.innerHTML = list.map((item, idx) => `
+        <button type="button" onclick="runCommandIndex(${COMMAND_ACTIONS.indexOf(item)})" class="w-full text-left px-3.5 py-2.5 rounded-xl bg-obsidian-950/70 hover:bg-champagne-400/20 border border-white/10 hover:border-champagne-400/40 flex items-center justify-between gap-2 transition-all">
+          <span class="text-xs font-semibold text-white">${item.label}</span>
+          <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-white/5 text-champagne-300">${item.tag}</span>
+        </button>
+      `).join("");
+    }
+
+    function runCommandIndex(idx) {
+      closeCommandPalette();
+      if (COMMAND_ACTIONS[idx]) COMMAND_ACTIONS[idx].run();
+    }
+
+    function openContactModal() {
+      const m = document.getElementById("contact-modal");
+      m.classList.remove("hidden");
+      m.classList.add("flex");
+    }
+
+    function closeContactModal() {
+      const m = document.getElementById("contact-modal");
+      m.classList.add("hidden");
+      m.classList.remove("flex");
+    }
+
+    function submitDirectContact(channel) {
+      const name = (document.getElementById("contact-name").value || "Prospective Client").trim();
+      const topic = document.getElementById("contact-topic").value;
+      const msg = (document.getElementById("contact-msg").value || "I'd love to discuss a project with you.").trim();
+      const fullText = `Hi Jayed, I'm ${name}.\nTopic: ${topic}\nDetails: ${msg}`;
+      closeContactModal();
+      if (channel === "whatsapp") {
+        window.open(`https://wa.me/8801307758119?text=${encodeURIComponent(fullText)}`, "_blank", "noopener,noreferrer");
+      } else {
+        window.location.href = `mailto:thunderseen@gmail.com?subject=${encodeURIComponent(topic + " - " + name)}&body=${encodeURIComponent(fullText)}`;
+      }
+      showToast("Opening outreach channel...");
+    }
+
+    window.addEventListener("keydown", (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
+        e.preventDefault();
+        openCommandPalette();
+      } else if (e.key === "Escape") {
+        closeCommandPalette();
+        closeProjectModal();
+        closeContactModal();
+      }
+    });
+
+    window.addEventListener("DOMContentLoaded", () => {
+      filterSkills("all");
+      filterProjects("all");
+      updateEstimator();
+      setCvFormat("visual");
+      initCompetencyChart();
+    });
+  </script>
+</body>
+</html>

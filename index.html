@@ -4,6 +4,39 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jayed Jaman Seen — WordPress Web Development &amp; AI Tools Specialist</title>
+  <meta name="description" content="Portfolio of Jayed Jaman Seen, a Digital Solutions Architect focused on WordPress web development and AI tools. Explore selected work, skills, and contact details.">
+  <link rel="canonical" href="https://thunderseen.github.io/JayedJamanSeen.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Jayed Jaman Seen">
+  <meta property="og:title" content="Jayed Jaman Seen — WordPress Web Development &amp; AI Tools Specialist">
+  <meta property="og:description" content="Portfolio of Jayed Jaman Seen, a Digital Solutions Architect focused on WordPress web development and AI tools. Explore selected work, skills, and contact details.">
+  <meta property="og:url" content="https://thunderseen.github.io/JayedJamanSeen.github.io/">
+  <meta property="og:image" content="https://thunderseen.github.io/JayedJamanSeen.github.io/assets/profile.jpg">
+  <meta property="og:image:alt" content="Jayed Jaman Seen">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Jayed Jaman Seen — WordPress Web Development &amp; AI Tools Specialist">
+  <meta name="twitter:description" content="Portfolio of Jayed Jaman Seen, a Digital Solutions Architect focused on WordPress web development and AI tools. Explore selected work, skills, and contact details.">
+  <meta name="twitter:image" content="https://thunderseen.github.io/JayedJamanSeen.github.io/assets/profile.jpg">
+  <meta name="twitter:image:alt" content="Jayed Jaman Seen">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Jayed Jaman Seen",
+      "url": "https://thunderseen.github.io/JayedJamanSeen.github.io/",
+      "image": "https://thunderseen.github.io/JayedJamanSeen.github.io/assets/profile.jpg",
+      "jobTitle": "WordPress Web Development & AI Tools Specialist",
+      "description": "WordPress developer and Computer Science student building polished, responsive websites and practical AI-assisted tools. I blend WooCommerce, SEO, and lead generation to help businesses grow online.",
+      "email": "mailto:thunderseen@gmail.com",
+      "sameAs": [
+        "https://www.linkedin.com/in/jayed-jaman-seen-b540b8334/",
+        "https://www.fiverr.com/jayedjaman_seen?public_mode=true",
+        "https://www.freelancer.com.bd/u/jayedjamans",
+        "https://x.com/JayedJamanSeen",
+        "https://github.com/JJSEEN"
+      ]
+    }
+  </script>
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -323,13 +356,23 @@
       box-shadow:0 1px 0 rgba(24,50,63,.04);
       backdrop-filter:blur(18px);
     }
-    header > div { min-height:74px;height:auto!important; }
+    header > div {
+      max-width:1200px!important;
+      min-height:74px;
+      height:auto!important;
+      gap:clamp(10px,1vw,18px)!important;
+      padding-left:clamp(16px,3vw,28px)!important;
+      padding-right:clamp(16px,3vw,28px)!important;
+    }
     header nav {
-      gap:22px!important;
+      flex:1 1 auto;
+      justify-content:center;
+      gap:clamp(10px,1.1vw,16px)!important;
       padding:0!important;
       border:0!important;
       background:transparent!important;
     }
+    header > div > div:first-child,header > div > div:last-child { flex:0 0 auto; }
     .nav-pill {
       position:relative;
       padding:10px 0!important;
@@ -338,7 +381,10 @@
       color:#657680!important;
       font-size:11px!important;
       font-weight:600!important;
+      white-space:nowrap;
+      flex-shrink:0;
     }
+    #open-cmd-btn,#theme-toggle,header button[onclick="openContactModal()"],header button[onclick*="switchWorkspaceMode('cv'"] { white-space:nowrap;flex-shrink:0; }
     .nav-pill:hover,.nav-pill.is-active { color:#0d716b!important; }
     .nav-pill.is-active::after {
       position:absolute;
@@ -350,14 +396,16 @@
       background:#0d716b;
       content:"";
     }
-    main { max-width:1320px!important;padding-top:32px!important;padding-bottom:64px!important; }
-    #portfolio-view { gap:clamp(48px,6vw,88px)!important; }
+    main { max-width:1200px!important;padding:32px clamp(16px,3vw,28px) 64px!important; }
+    footer > div { max-width:1200px!important;padding-left:clamp(16px,3vw,28px)!important;padding-right:clamp(16px,3vw,28px)!important; }
+    #portfolio-view { gap:clamp(48px,6vw,80px)!important; }
     main section { scroll-margin-top:96px; }
     #hero-sec {
       grid-template-columns:minmax(0,1.35fr) minmax(270px,.65fr);
       gap:clamp(24px,4vw,56px)!important;
-      align-items:center;
+      align-items:stretch;
     }
+    #hero-sec > div { grid-column:auto!important; }
     #hero-sec > div:first-child {
       padding:clamp(20px,4vw,54px) 0!important;
       overflow:visible!important;
@@ -388,24 +436,23 @@
     #hero-sec #profile-bio { max-width:610px;font-size:15px;line-height:1.85; }
     #hero-sec > div:nth-child(2) {
       align-self:stretch;
-      min-height:0;
+      min-height:100%;
       padding:20px!important;
       border:1px solid rgba(24,50,63,.1)!important;
       border-radius:6px!important;
       background:#e9efeb!important;
       box-shadow:0 24px 70px -48px rgba(24,50,63,.45)!important;
     }
-    #hero-sec > div:nth-child(2) .relative.w-36 {
-      width:clamp(180px,17vw,220px)!important;
-      height:auto!important;
-      aspect-ratio:1/1;
-      margin:0 auto 16px!important;
-      border:0!important;
-      border-radius:20px!important;
-      box-shadow:none!important;
+    .profile-summary { display:flex;align-items:center;gap:16px;margin-bottom:18px;text-align:left; }
+    .profile-photo-frame {
+      width:132px;height:132px;flex:0 0 132px;overflow:hidden;
+      border:0!important;border-radius:14px!important;
+      background:#172a30;box-shadow:none!important;
     }
-    #hero-sec > div:nth-child(2) .relative.w-36 img { object-position:center 35%; }
-    #hero-sec > div:nth-child(2) .relative.w-36 span { right:12px;bottom:12px; }
+    .profile-photo-frame img { display:block;width:100%;height:100%;object-fit:contain;object-position:center 35%; }
+    .profile-photo-frame span { right:9px;bottom:9px; }
+    .profile-summary h2 { margin:0 0 6px;font-size:clamp(16px,1.4vw,20px);line-height:1.2; }
+    .profile-summary p { margin:0;line-height:1.5; }
     #hero-sec > div:nth-child(2) .text-white { color:#18323f!important; }
     #hero-sec > div:nth-child(2) .text-slate-400,
     #hero-sec > div:nth-child(2) .text-slate-300 { color:#60737d!important; }
@@ -428,7 +475,12 @@
     }
     #hero-sec .bento-card:hover { transform:none; }
     #skills-sec { gap:28px!important; }
-    #skills-sec > div:first-child { align-items:flex-end; }
+    #skills-sec > div:first-child,#projects-sec > .flex:first-child {
+      align-items:flex-start!important;
+      flex-direction:column!important;
+      gap:14px!important;
+    }
+    #skill-filter-bar,#project-filter-bar { justify-content:flex-start; }
     #skills-sec h2,#projects-sec h2,#timeline-sec h2,#estimator-sec h2,#cv-studio-sec h2 {
       font-family:"Manrope",sans-serif!important;
       font-size:clamp(2rem,4vw,3.15rem)!important;
@@ -439,15 +491,12 @@
     #skills-grid-container > .bento-card { min-height:220px;padding:22px!important; }
     #skills-sec [class~="lg:col-span-5"].bento-card { padding:24px!important; }
     #projects-sec { gap:24px!important; }
-    #projects-sec > .flex:first-child { align-items:flex-end;gap:22px; }
     #projects-grid-container {
-      grid-template-columns:repeat(12,minmax(0,1fr))!important;
-      gap:28px!important;
+      grid-template-columns:repeat(2,minmax(0,1fr))!important;
+      gap:24px!important;
     }
     #projects-grid-container.project-cinema { grid-template-columns:minmax(0,1fr)!important; }
-    #projects-grid-container > .project-card { grid-column:span 6; }
-    #projects-grid-container > .project-card:nth-child(4n+1) { grid-column:span 7; }
-    #projects-grid-container > .project-card:nth-child(4n+2) { grid-column:span 5; }
+    #projects-grid-container > .project-card { grid-column:auto!important; }
     .project-card {
       gap:18px!important;
       padding:12px!important;
@@ -463,6 +512,7 @@
     .project-card .project-meta-actions { padding:0 8px 6px; }
     .project-meta-actions > * { min-height:38px;align-content:center; }
     #project-filter-bar { gap:6px; }
+    .proj-toolbar { justify-content:flex-start; }
     .proj-tab-btn { border-radius:999px!important;padding:8px 12px!important; }
     .project-tech-filter { padding:6px 0 2px; }
     .project-tech-filter button { padding:7px 12px; }
@@ -488,27 +538,33 @@
     .trust-item { padding:18px; }
     footer { padding-top:28px!important; }
     @media(max-width:900px) {
-      header nav { gap:12px!important; }
+      header nav { gap:8px!important; }
       .nav-pill { font-size:10px!important; }
       #site-role-descriptor { display:none!important; }
       #hero-sec { grid-template-columns:minmax(0,1fr) minmax(230px,.72fr); }
       #hero-sec h1 { font-size:clamp(2.5rem,5.8vw,4.2rem)!important; }
-      #projects-grid-container > .project-card,
-      #projects-grid-container > .project-card:nth-child(4n+1),
-      #projects-grid-container > .project-card:nth-child(4n+2) { grid-column:span 6; }
+      .profile-photo-frame { width:104px;height:104px;flex-basis:104px; }
+      .profile-summary { gap:12px; }
+      .platform-links { gap:8px; }
     }
     @media(max-width:700px) {
       main { padding-top:22px!important; }
       #portfolio-view { gap:50px!important; }
+      header > div { gap:6px!important; }
+      header > div > div:first-child { gap:8px; }
+      header > div > div:last-child { gap:5px; }
+      header > div > div:last-child > button { padding-left:9px!important;padding-right:9px!important; }
+      #theme-toggle { min-width:34px;min-height:36px; }
+      #open-cmd-btn { padding-left:9px!important;padding-right:9px!important; }
       #hero-sec { grid-template-columns:1fr;gap:12px!important; }
       #hero-sec > div:first-child { padding:20px 0 12px!important; }
       #hero-sec h1 { font-size:clamp(2.2rem,7.8vw,3.2rem)!important; }
-      #hero-sec > div:nth-child(2) { min-height:0;padding:14px!important; }
-      #hero-sec > div:nth-child(2) .relative.w-36 { width:min(100%,184px)!important;height:auto!important; }
+      #hero-sec > div:nth-child(2) { min-height:560px;padding:14px!important; }
+      .profile-photo-frame { width:120px;height:120px;flex-basis:120px; }
+      .profile-summary { gap:14px;margin-bottom:16px; }
+      .platform-link { padding:0 12px; }
       #skills-sec > div:first-child,#projects-sec > .flex:first-child { align-items:flex-start; }
-      #projects-grid-container > .project-card,
-      #projects-grid-container > .project-card:nth-child(4n+1),
-      #projects-grid-container > .project-card:nth-child(4n+2) { grid-column:1/-1; }
+      #projects-grid-container { grid-template-columns:minmax(0,1fr)!important;gap:18px!important; }
       .project-viewport { height:230px; }
       .project-cinema .project-viewport { height:300px; }
       .trust-item { padding:12px; }
@@ -693,13 +749,13 @@
     .trust-bar { border-radius:20px;background:rgba(35,76,78,.07); }
     .trust-item:first-child { border-radius:18px 0 0 18px; }
     .trust-item:last-child { border-radius:0 18px 18px 0; }
-    .platform-links { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px; }
+    .platform-links { display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px; }
     .platform-link {
-      display:flex;min-width:0;min-height:62px;flex-direction:column;align-items:center;justify-content:center;gap:5px;
-      border:1px solid rgba(24,50,63,.1);border-radius:14px;background:rgba(255,255,255,.72);
-      color:#536874;font-size:10px;font-weight:700;text-align:center;transition:transform .25s ease,border-color .25s ease,background-color .25s ease,box-shadow .25s ease;
+      display:flex;min-width:0;min-height:54px;flex-direction:row;align-items:center;justify-content:flex-start;gap:8px;padding:0 10px;
+      border:1px solid rgba(24,50,63,.1);border-radius:12px;background:rgba(255,255,255,.72);
+      color:#536874;font-size:10px;font-weight:700;text-align:left;white-space:nowrap;transition:transform .25s ease,border-color .25s ease,background-color .25s ease,box-shadow .25s ease;
     }
-    .platform-link svg { width:18px;height:18px;flex:none; }
+    .platform-link svg { width:18px;height:18px;flex:0 0 18px; }
     .platform-link:hover { transform:translateY(-2px);border-color:rgba(15,118,110,.28);background:#fff;box-shadow:0 8px 18px -12px rgba(24,50,63,.35); }
     .nav-pill { transition:color .3s ease,background-color .3s ease; }
     #theme-toggle svg { transition:transform .45s cubic-bezier(.22,1,.36,1); }
@@ -810,7 +866,7 @@
           CV Studio
         </button>
         <button type="button" onclick="openContactModal()" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-champagne-400 to-champagne-300 hover:from-champagne-300 hover:to-champagne-400 text-obsidian-950 font-bold text-xs shadow-lg shadow-champagne-400/10 transition-all">
-          <span>Hire / Contact</span>
+          <span>Contact</span>
         </button>
       </div>
     </div>
@@ -911,12 +967,14 @@
 
         <!-- Right 4-Col Executive Portrait & Verified Credentials Card -->
         <div class="lg:col-span-4 bento-card rounded-3xl p-6 flex flex-col justify-between relative overflow-hidden">
-          <div class="flex flex-col items-center text-center">
-            <div class="relative w-36 h-44 sm:w-40 sm:h-48 rounded-2xl overflow-hidden border-2 border-champagne-400 shadow-2xl mb-4 bg-obsidian-900">
+          <div class="profile-summary">
+            <div class="profile-photo-frame relative rounded-2xl overflow-hidden bg-obsidian-900">
               <img src="assets/profile.jpg" alt="Jayed Jaman Seen Studio Portrait" class="w-full h-full object-cover">
             </div>
-            <h2 class="font-display font-bold text-lg text-white">Jayed Jaman Seen</h2>
-            <p class="text-xs text-champagne-300 font-medium mb-3">WordPress Web Development &amp; AI Tools Specialist</p>
+            <div class="min-w-0">
+              <h2 class="font-display font-bold text-lg text-white">Jayed Jaman Seen</h2>
+              <p class="text-xs text-champagne-300 font-medium">WordPress Web Development &amp; AI Tools Specialist</p>
+            </div>
           </div>
 
           <!-- 4 Quick Verified Proof Metrics -->

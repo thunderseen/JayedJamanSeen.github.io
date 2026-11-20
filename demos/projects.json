@@ -1,0 +1,112 @@
+[
+  {
+    "id": "proj-apex-wp",
+    "cat": "wordpress",
+    "badge": "Live Interactive Demo",
+    "thumbClass": "thumb-apex",
+    "thumbLabel": "WORDPRESS • ELEMENTOR",
+    "thumbTitle": "Apex Architecture & Build",
+    "thumbTagline": "Corporate WordPress layout with interactive service tabs & live inquiry preview.",
+    "thumbStats": [["98/100", "Speed Goal"], ["Rank Math", "SEO Ready"], ["5–7 Days", "Delivery"]],
+    "title": "Apex Studio — Business WordPress Build",
+    "subtitle": "Interactive Showcase • Corporate & Agency Architecture",
+    "desc": "Conversion-focused business website structure featuring modular Elementor sections, clear project roadmaps, and frictionless consultation capture.",
+    "bullets": [
+      "Click Live Preview to test interactive module filters and the consultation booking form.",
+      "Mobile-first responsive spacing tested across 390px phone, 768px tablet, and 1440px desktop.",
+      "Clean semantic headings and Rank Math SEO architecture ready for immediate launch."
+    ],
+    "tags": ["WordPress", "Elementor", "Responsive UI", "Rank Math SEO"],
+    "liveUrl": "demos/apex-agency.html",
+    "link": "demos/apex-agency.html",
+    "ctaLabel": "Open Live Demo ↗"
+  },
+  {
+    "id": "proj-velora-woo",
+    "cat": "wordpress",
+    "badge": "Live Interactive Demo",
+    "thumbClass": "thumb-velora",
+    "thumbLabel": "WOOCOMMERCE STOREFRONT",
+    "thumbTitle": "Velora Coffee Roasters",
+    "thumbTagline": "E-commerce storefront with category filtering & working slide-out shopping bag.",
+    "thumbStats": [["Live Cart", "Interactive"], ["3 Categories", "Filterable"], ["Checkout", "Ready UX"]],
+    "title": "Velora Roasters — WooCommerce Storefront",
+    "subtitle": "Interactive Showcase • E-Commerce & Cart UX",
+    "desc": "Boutique online store concept designed for smooth browsing, instant product filtering, and high-converting slide-out cart checkout.",
+    "bullets": [
+      "Click Live Preview to filter products and add/remove items inside the working cart drawer.",
+      "Built for WooCommerce catalog templates, Stripe/PayPal/SSLCommerz checkout, and mobile shoppers.",
+      "Visual product hierarchy focused on clear pricing, bundle upsells, and fast load times."
+    ],
+    "tags": ["WooCommerce", "WordPress", "E-Commerce UX", "Cart Drawer"],
+    "liveUrl": "demos/velora-store.html",
+    "link": "demos/velora-store.html",
+    "ctaLabel": "Open Live Store ↗"
+  },
+  {
+    "id": "proj-id-portal",
+    "cat": "webapp",
+    "badge": "Live Cloud Web App",
+    "thumbClass": "thumb-id",
+    "thumbLabel": "LIVE APP • RENDER CLOUD",
+    "thumbTitle": "Student ID Card Portal",
+    "thumbTagline": "Real-time student ID card generator with instant live preview & 300DPI print export.",
+    "thumbStats": [["Live App", "Render Cloud"], ["Print PDF", "300DPI"], ["Real-Time", "Form Sync"]],
+    "title": "Automated Student ID Card Web Application",
+    "subtitle": "Department of Youth Development (DYD) • Deployed on Render",
+    "desc": "Independently built and deployed web application that turns student details into clean, print-ready identity cards in seconds.",
+    "bullets": [
+      "Click Live Preview to test the instant interactive ID generator right here (zero wait while Render wakes up).",
+      "Live production cloud deployment hosted at student-id-portal-1.onrender.com.",
+      "Built with AI-assisted workflows, clean print stylesheets, and cross-device responsiveness."
+    ],
+    "tags": ["Web Application", "Render Cloud", "AI-Assisted Dev", "Print Export"],
+    "liveUrl": "demos/student-id-preview.html",
+    "link": "https://student-id-portal-1.onrender.com",
+    "ctaLabel": "Launch Cloud App ↗"
+  },
+  {
+    "id": "proj-pulse-seo",
+    "cat": "seo",
+    "badge": "Live Interactive Demo",
+    "thumbClass": "thumb-pulse",
+    "thumbLabel": "SEO & B2B LEAD ENGINE",
+    "thumbTitle": "PulseRank AI Dashboard",
+    "thumbTagline": "Interactive keyword difficulty, search-intent clustering & niche opportunity explorer.",
+    "thumbStats": [["3 Niches", "Switchable"], ["Intent Map", "Transactional"], ["B2B Leads", "Verified"]],
+    "title": "PulseRank AI — SEO & Lead Gen Explorer",
+    "subtitle": "Interactive Showcase • Keyword Audits & Prospect Ops",
+    "desc": "Client-facing reporting view demonstrating keyword intent mapping, low-difficulty quick wins, and structured B2B/B2C outreach deliverables.",
+    "bullets": [
+      "Click Live Preview and switch client niches to inspect live keyword clusters and page recommendations.",
+      "Reflects hands-on workflow across Ahrefs, SEMrush, Google Keyword Planner, GSC, and GA4.",
+      "Designed to help business owners see exactly how SEO connects to website revenue."
+    ],
+    "tags": ["SEMrush", "Ahrefs", "Rank Math", "GA4 & GSC", "B2B Lead Gen"],
+    "liveUrl": "demos/pulse-ai-seo.html",
+    "link": "demos/pulse-ai-seo.html",
+    "ctaLabel": "Open Live Tool ↗"
+  },
+  {
+    "id": "proj-brand-ops",
+    "cat": "brand",
+    "badge": "5+ Years Real Brand Ops",
+    "thumbClass": "thumb-brand",
+    "thumbLabel": "BRAND & DIGITAL MARKETING",
+    "thumbTitle": "M/S Munni Trading & Co.",
+    "thumbTagline": "End-to-end social media, commercial product visuals & regional lead campaigns.",
+    "thumbStats": [["May 2021", "Ongoing"], ["Full Visuals", "Photo & Video"], ["Lead Gen", "Meta Suite"]],
+    "title": "M/S Munni Trading & Co. / The Chanachur Factory",
+    "subtitle": "Ongoing Role • Brand Communication & Creative Production",
+    "desc": "Five-plus years directing digital brand presence, commercial photography/videography, promotional design, and digital outreach.",
+    "bullets": [
+      "Manage ongoing social media presence, campaign calendars, and brand messaging (May 2021 – Present).",
+      "Produce commercial product photography, short-form videos, and graphics in Photoshop, Illustrator & Canva.",
+      "Support digital customer acquisition and consistent visual identity across channels."
+    ],
+    "tags": ["Meta Business Suite", "Photoshop", "Illustrator", "Premiere Pro", "CapCut"],
+    "liveUrl": "",
+    "link": "https://www.linkedin.com/in/jayed-jaman-seen-b540b8334/",
+    "ctaLabel": "View LinkedIn ↗"
+  }
+]
